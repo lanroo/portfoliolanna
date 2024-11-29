@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { AiOutlineDown } from 'react-icons/ai'; 
 import { useEffect, useState } from 'react';
 
 export default function ScrollIndicator() {
@@ -31,7 +31,7 @@ export default function ScrollIndicator() {
       className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center"
     >
       <span className="text-sm text-muted-foreground mb-2">Role para explorar</span>
-      <ChevronDown className="h-6 w-6 animate-bounce" />
+      <AiOutlineDown className="h-6 w-6 animate-bounce" /> {/* Substituído por AiOutlineDown */}
     </motion.div>
   );
 }

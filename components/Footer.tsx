@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin, Mail, MessageSquare, Heart } from 'lucide-react';
+import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope, FaWhatsapp, FaHeart } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
 
 export default function Footer() {
@@ -20,7 +20,7 @@ export default function Footer() {
           >
             <h3 className="font-semibold text-base mb-3">Sobre mim</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-            Desenvolvedora Full Stack apaixonada por criar soluções inovadoras. Especializada em tecnologias de frontend e backend, adoro transformar problemas complexos em soluções simples, bonitas e intuitivas.
+              Desenvolvedora Full Stack apaixonada por criar soluções inovadoras. Especializada em tecnologias de frontend e backend, adoro transformar problemas complexos em soluções simples, bonitas e intuitivas.
             </p>
           </motion.div>
 
@@ -36,12 +36,12 @@ export default function Footer() {
             <div className="flex flex-col gap-2 w-full max-w-xs">
               <Button variant="ghost" size="sm" className="justify-start h-8 px-2 w-full hover:bg-secondary" asChild>
                 <a href="mailto:your@email.com" className="text-sm">
-                  <Mail className="mr-2 h-3.5 w-3.5" /> E-mail
+                  <FaEnvelope className="mr-2 h-3.5 w-3.5" /> E-mail
                 </a>
               </Button>
               <Button variant="ghost" size="sm" className="justify-start h-8 px-2 w-full hover:bg-secondary" asChild>
                 <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer" className="text-sm">
-                  <MessageSquare className="mr-2 h-3.5 w-3.5" /> WhatsApp
+                  <FaWhatsapp className="mr-2 h-3.5 w-3.5" /> WhatsApp
                 </a>
               </Button>
             </div>
@@ -57,7 +57,7 @@ export default function Footer() {
         >
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-muted-foreground flex items-center gap-1">
-              Feito com <Heart className="h-3 w-3 text-red-500" /> © {currentYear}
+              Feito com <FaHeart className="h-3 w-3 text-red-500" /> © {currentYear}
             </p>
             <div className="flex items-center gap-3">
               <motion.a
@@ -67,7 +67,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.1 }}
                 className="text-muted-foreground hover:text-primary transition-colors p-1.5"
               >
-                <Github className="h-4 w-4" />
+                <FaGithub className="h-4 w-4" />
               </motion.a>
               <motion.a
                 href="https://x.com/devingerr"
@@ -76,7 +76,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.1 }}
                 className="text-muted-foreground hover:text-primary transition-colors p-1.5"
               >
-                <Twitter className="h-4 w-4" />
+                <FaTwitter className="h-4 w-4" />
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/in/yladacs/"
@@ -85,7 +85,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.1 }}
                 className="text-muted-foreground hover:text-primary transition-colors p-1.5"
               >
-                <Linkedin className="h-4 w-4" />
+                <FaLinkedin className="h-4 w-4" />
               </motion.a>
             </div>
           </div>

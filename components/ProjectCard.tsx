@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Github, Globe } from 'lucide-react';
+import { FaGithub, FaGlobe } from 'react-icons/fa';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -65,13 +65,13 @@ export default function ProjectCard({
         <CardFooter className="p-6 pt-0 flex gap-4 mt-auto">
           <Button variant="outline" size="sm" asChild>
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-4 w-4" /> GitHub
+              <FaGithub className="mr-2 h-4 w-4" /> GitHub
             </a>
           </Button>
           {liveUrl && (
             <Button variant="outline" size="sm" asChild>
               <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                <Globe className="mr-2 h-4 w-4" /> Acessar site
+                <FaGlobe className="mr-2 h-4 w-4" /> Acessar site
               </a>
             </Button>
           )}

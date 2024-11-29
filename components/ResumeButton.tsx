@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FileDown } from 'lucide-react';
+import { AiOutlineDownload } from 'react-icons/ai'; // Substituição do ícone
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
@@ -14,7 +14,7 @@ export default function ResumeButton() {
     try {
       setIsLoading(true);
 
-      const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL; 
+      const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL;
 
       if (!resumeUrl) {
         throw new Error('Resume URL is not defined');
@@ -51,7 +51,9 @@ export default function ResumeButton() {
         disabled={isLoading}
       >
         <div className="absolute inset-0 bg-white/10 group-hover:translate-y-12 transition-transform duration-300" />
-        <FileDown className={`mr-2 h-5 w-5 ${isLoading ? 'animate-spin' : 'animate-bounce'}`} />
+        <AiOutlineDownload
+          className={`mr-2 h-5 w-5 ${isLoading ? 'animate-spin' : 'animate-bounce'}`} // Ícone atualizado
+        />
         {isLoading ? 'Redirecionando...' : 'Download CV'}
       </Button>
     </motion.div>

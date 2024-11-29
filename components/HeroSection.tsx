@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Edges } from '@react-three/drei';
-import { Github, Twitter, MessageSquare, Mail } from 'lucide-react';
+import { FaGithub, FaTwitter, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
 import ScrollIndicator from './ScrollIndicator';
 import ResumeButton from './ResumeButton';
@@ -113,22 +113,22 @@ export default function HeroSection() {
           <div className="flex gap-4 flex-wrap justify-center">
             <Button variant="outline" size="lg" asChild>
               <a href="mailto:yladacz@gmail.com">
-                <Mail className="mr-2 h-4 w-4" /> E-mail
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="https://x.com/devingerr" target="_blank" rel="noopener noreferrer">
-                <Twitter className="mr-2 h-4 w-4" /> Twitter/X
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="https://github.com/lanroo" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" /> GitHub
+                <FaEnvelope className="mr-2 h-4 w-4" /> E-mail
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="https://wa.me/+5591985464442" target="_blank" rel="noopener noreferrer">
-                <MessageSquare className="mr-2 h-4 w-4" /> WhatsApp
+                <FaWhatsapp className="mr-2 h-4 w-4" /> WhatsApp
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="https://x.com/devingerr" target="_blank" rel="noopener noreferrer">
+                <FaTwitter className="mr-2 h-4 w-4" /> Twitter/X
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="https://github.com/lanroo" target="_blank" rel="noopener noreferrer">
+                <FaGithub className="mr-2 h-4 w-4" /> GitHub
               </a>
             </Button>
           </div>
