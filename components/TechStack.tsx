@@ -2,86 +2,89 @@
 
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
-import * as SimpleIcons from 'simple-icons';
+import { SiAmazon } from 'react-icons/si';
+
+import {
+  SiReact,
+  SiVuedotjs,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiRedux,
+  SiBootstrap,
+  SiSass,
+  SiStorybook,
+  SiPython,
+  SiFlask,
+  SiPhp,
+  SiExpress,
+  SiNextdotjs,
+  SiPostgresql,
+  SiSqlite,
+  SiPrisma,
+  SiDocker,
+  SiKubernetes,
+  SiNginx,
+  SiJsonwebtokens,
+  SiAuth0,
+  SiSelenium,
+  SiPostman,
+} from 'react-icons/si';
 
 interface TechItem {
   name: string;
-  icon: string;
+  icon: JSX.Element;
   color: string;
   category: 'frontend' | 'backend' | 'database' | 'tools';
-  lightBg?: boolean;
 }
 
 const techStack: TechItem[] = [
   // Frontend
-  { name: 'React', icon: 'siReact', color: '#61DAFB', category: 'frontend' },
-  { name: 'Vue.js', icon: 'siVuedotjs', color: '#4FC08D', category: 'frontend' },
-  { name: 'TypeScript', icon: 'siTypescript', color: '#3178C6', category: 'frontend' },
-  { name: 'JavaScript', icon: 'siJavascript', color: '#F7DF1E', category: 'frontend' },
-  { name: 'Tailwind CSS', icon: 'siTailwindcss', color: '#38B2AC', category: 'frontend' },
-  { name: 'React Native', icon: 'siReact', color: '#61DAFB', category: 'frontend' },
-  { name: 'Redux', icon: 'siRedux', color: '#764ABC', category: 'frontend' },
-  { name: 'Bootstrap', icon: 'siBootstrap', color: '#7952B3', category: 'frontend' },
-  { name: 'SASS', icon: 'siSass', color: '#CC6699', category: 'frontend' },
-  { name: 'Storybook', icon: 'siStorybook', color: '#FF4785', category: 'frontend' },
-  
+  { name: 'React', icon: <SiReact />, color: '#61DAFB', category: 'frontend' },
+  { name: 'Vue.js', icon: <SiVuedotjs />, color: '#4FC08D', category: 'frontend' },
+  { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6', category: 'frontend' },
+  { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E', category: 'frontend' },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#38B2AC', category: 'frontend' },
+  { name: 'Redux', icon: <SiRedux />, color: '#764ABC', category: 'frontend' },
+  { name: 'Bootstrap', icon: <SiBootstrap />, color: '#7952B3', category: 'frontend' },
+  { name: 'SASS', icon: <SiSass />, color: '#CC6699', category: 'frontend' },
+  { name: 'Storybook', icon: <SiStorybook />, color: '#FF4785', category: 'frontend' },
+
   // Backend
-  { name: 'Python', icon: 'siPython', color: '#3776AB', category: 'backend' },
-  { name: 'Flask', icon: 'siFlask', color: '#ffffff', category: 'backend', lightBg: true },
-  { name: 'PHP', icon: 'siPhp', color: '#777BB4', category: 'backend' },
-  { name: 'Express', icon: 'siExpress', color: '#ffffff', category: 'backend', lightBg: true },
-  { name: 'Next.js', icon: 'siNextdotjs', color: '#ffffff', category: 'backend', lightBg: true },
-  { name: 'Pytest', icon: 'siPython', color: '#0A9EDC', category: 'backend' },
-  { name: 'WebSocket', icon: 'siSocketdotio', color: '#ffffff', category: 'backend', lightBg: true },
-  { name: 'JWT', icon: 'siJsonwebtokens', color: '#ffffff', category: 'backend', lightBg: true },
-  { name: 'OAuth', icon: 'siAuth0', color: '#EB5424', category: 'backend' },
-  
+  { name: 'Python', icon: <SiPython />, color: '#3776AB', category: 'backend' },
+  { name: 'Flask', icon: <SiFlask />, color: '#ffffff', category: 'backend' },
+  { name: 'PHP', icon: <SiPhp />, color: '#777BB4', category: 'backend' },
+  { name: 'Express', icon: <SiExpress />, color: '#ffffff', category: 'backend' },
+  { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff', category: 'backend' },
+  { name: 'JWT', icon: <SiJsonwebtokens />, color: '#ffffff', category: 'backend' },
+  { name: 'OAuth', icon: <SiAuth0 />, color: '#EB5424', category: 'backend' },
+
   // Database
-  { name: 'PostgreSQL', icon: 'siPostgresql', color: '#336791', category: 'database' },
-  { name: 'SQLite', icon: 'siSqlite', color: '#003B57', category: 'database' },
-  { name: 'Prisma', icon: 'siPrisma', color: '#2D3748', category: 'database' },
-  
+  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791', category: 'database' },
+  { name: 'SQLite', icon: <SiSqlite />, color: '#003B57', category: 'database' },
+  { name: 'Prisma', icon: <SiPrisma />, color: '#2D3748', category: 'database' },
+
   // Tools & Infrastructure
-  { name: 'Docker', icon: 'siDocker', color: '#2496ED', category: 'tools' },
-  { name: 'Kubernetes', icon: 'siKubernetes', color: '#326CE5', category: 'tools' },
-  { name: 'AWS', icon: 'siAmazonaws', color: '#FF9900', category: 'tools' },
-  { name: 'Nginx', icon: 'siNginx', color: '#009639', category: 'tools' },
-  { name: 'PM2', icon: 'siPm2', color: '#2B037A', category: 'tools' },
-  { name: 'CI/CD', icon: 'siGithubactions', color: '#2088FF', category: 'tools' },
-  { name: 'REST API', icon: 'siPostman', color: '#FF6C37', category: 'tools' },
-  { name: 'Selenium', icon: 'siSelenium', color: '#43B02A', category: 'tools' }
+  { name: 'Docker', icon: <SiDocker />, color: '#2496ED', category: 'tools' },
+  { name: 'Kubernetes', icon: <SiKubernetes />, color: '#326CE5', category: 'tools' },
+  { name: 'AWS', icon: <SiAmazon />, color: '#FF9900', category: 'tools' },
+  { name: 'Nginx', icon: <SiNginx />, color: '#009639', category: 'tools' },
+  { name: 'Postman', icon: <SiPostman />, color: '#FF6C37', category: 'tools' },
+  { name: 'Selenium', icon: <SiSelenium />, color: '#43B02A', category: 'tools' },
 ];
 
 export default function TechStack() {
-  const getIcon = (iconName: string) => {
-    const cleanName = iconName.replace('si', '').toLowerCase();
-    const icon = SimpleIcons[iconName as keyof typeof SimpleIcons];
-    return icon ? (
-      <svg
-        role="img"
-        viewBox="0 0 24 24"
-        className="w-8 h-8"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d={icon.path} />
-      </svg>
-    ) : null;
-  };
-
   const categories = ['frontend', 'backend', 'database', 'tools'] as const;
   const categoryTitles = {
     frontend: 'Frontend Development',
     backend: 'Backend Development',
     database: 'Database',
-    tools: 'Tools & Infrastructure'
+    tools: 'Tools & Infrastructure',
   };
 
   return (
     <section className="py-20 bg-black relative overflow-hidden" id="tech-stack">
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      
-      <div className="container px-4 mx-auto relative z-10">
+      <div className="container px-4 mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +105,7 @@ export default function TechStack() {
               >
                 {categoryTitles[category]}
               </motion.h3>
-              
+
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {techStack
                   .filter((tech) => tech.category === category)
@@ -118,23 +121,12 @@ export default function TechStack() {
                         delay: index * 0.05,
                       }}
                     >
-                      <Card 
-                        className={`p-4 h-full bg-zinc-900/50 border-zinc-800 backdrop-blur-sm hover:border-[color:var(--glow-color)] transition-all duration-300 group ${
-                          tech.lightBg ? 'bg-zinc-800/80' : ''
-                        }`}
-                        style={{ '--glow-color': tech.color } as any}
+                      <Card
+                        className={`p-4 h-full bg-zinc-900/50 border-zinc-800 hover:border-${tech.color} transition-all duration-300 group`}
                       >
-                        <div className="flex flex-col items-center justify-center h-full gap-2 relative">
-                          <div className="text-3xl mb-2 relative text-[color:var(--glow-color)]">
-                            {getIcon(tech.icon)}
-                            <div
-                              className="absolute inset-0 blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-300"
-                              style={{ backgroundColor: tech.color }}
-                            />
-                          </div>
-                          <span className="text-sm font-medium text-zinc-300 text-center">
-                            {tech.name}
-                          </span>
+                        <div className="flex flex-col items-center justify-center h-full gap-2">
+                          <div className="text-3xl text-white">{tech.icon}</div>
+                          <span className="text-sm font-medium text-zinc-300 text-center">{tech.name}</span>
                         </div>
                       </Card>
                     </motion.div>
