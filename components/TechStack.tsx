@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { SiAmazon } from 'react-icons/si';
 
+// Importando ícones do react-icons
 import {
   SiReact,
   SiVuedotjs,
@@ -122,9 +123,17 @@ export default function TechStack() {
                       }}
                     >
                       <Card
-                        className={`p-4 h-full bg-zinc-900/50 border-zinc-800 hover:border-${tech.color} transition-all duration-300 group`}
+                        className={`p-4 h-full bg-zinc-900/50 border-zinc-800 transition-all duration-300 group relative`}
+                        style={{
+                          '--hover-color': tech.color,
+                        } as React.CSSProperties}
                       >
-                        <div className="flex flex-col items-center justify-center h-full gap-2">
+                        <div className="absolute inset-0 rounded-md border-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          style={{
+                            borderColor: 'var(--hover-color)',
+                          }}
+                        ></div>
+                        <div className="flex flex-col items-center justify-center h-full gap-2 relative z-10">
                           <div className="text-3xl text-white">{tech.icon}</div>
                           <span className="text-sm font-medium text-zinc-300 text-center">{tech.name}</span>
                         </div>
