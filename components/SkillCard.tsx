@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { LucideIcon, Layout, Server, Tool } from 'lucide-react';
+import { FaServer, FaTools, FaLayerGroup } from 'react-icons/fa'; 
 import { motion } from 'framer-motion';
 
 interface SkillCardProps {
@@ -11,11 +11,12 @@ interface SkillCardProps {
   index: number;
 }
 
-const icons: Record<string, LucideIcon> = {
-  layout: Layout,
-  server: Server,
-  tool: Tool,
+const icons: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+  layout: FaLayerGroup, 
+  server: FaServer, 
+  tool: FaTools, 
 };
+
 
 export default function SkillCard({ title, skills, icon, index }: SkillCardProps) {
   const Icon = icons[icon];
