@@ -2,20 +2,16 @@
 
 import * as React from 'react';
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
-import { Check, ChevronRight, Circle } from 'lucide-react';
+import { AiOutlineCheck, AiOutlineRight } from 'react-icons/ai';
+import { FiCircle } from 'react-icons/fi';
 
 import { cn } from '@/lib/utils';
 
 const ContextMenu = ContextMenuPrimitive.Root;
-
 const ContextMenuTrigger = ContextMenuPrimitive.Trigger;
-
 const ContextMenuGroup = ContextMenuPrimitive.Group;
-
 const ContextMenuPortal = ContextMenuPrimitive.Portal;
-
 const ContextMenuSub = ContextMenuPrimitive.Sub;
-
 const ContextMenuRadioGroup = ContextMenuPrimitive.RadioGroup;
 
 const ContextMenuSubTrigger = React.forwardRef<
@@ -34,7 +30,7 @@ const ContextMenuSubTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <ChevronRight className="ml-auto h-4 w-4" />
+    <AiOutlineRight className="ml-auto h-4 w-4" />
   </ContextMenuPrimitive.SubTrigger>
 ));
 ContextMenuSubTrigger.displayName = ContextMenuPrimitive.SubTrigger.displayName;
@@ -104,7 +100,7 @@ const ContextMenuCheckboxItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <ContextMenuPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <AiOutlineCheck className="h-4 w-4" />
       </ContextMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -127,7 +123,7 @@ const ContextMenuRadioItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <ContextMenuPrimitive.ItemIndicator>
-        <Circle className="h-2 w-2 fill-current" />
+        <FiCircle className="h-2 w-2 fill-current" />
       </ContextMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -165,19 +161,8 @@ const ContextMenuSeparator = React.forwardRef<
 ));
 ContextMenuSeparator.displayName = ContextMenuPrimitive.Separator.displayName;
 
-const ContextMenuShortcut = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
-  return (
-    <span
-      className={cn(
-        'ml-auto text-xs tracking-widest text-muted-foreground',
-        className
-      )}
-      {...props}
-    />
-  );
+const ContextMenuShortcut = (props: React.HTMLAttributes<HTMLSpanElement>) => {
+  return <span className="ml-auto text-xs tracking-widest" {...props} />;
 };
 ContextMenuShortcut.displayName = 'ContextMenuShortcut';
 

@@ -2,7 +2,8 @@
 
 import * as React from 'react';
 import * as MenubarPrimitive from '@radix-ui/react-menubar';
-import { Check, ChevronRight, Circle } from 'lucide-react';
+import { AiOutlineCheck, AiOutlineRight } from 'react-icons/ai';
+import { FiCircle } from 'react-icons/fi';
 
 import { cn } from '@/lib/utils';
 
@@ -62,7 +63,7 @@ const MenubarSubTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <ChevronRight className="ml-auto h-4 w-4" />
+    <AiOutlineRight className="ml-auto h-4 w-4" />
   </MenubarPrimitive.SubTrigger>
 ));
 MenubarSubTrigger.displayName = MenubarPrimitive.SubTrigger.displayName;
@@ -85,8 +86,7 @@ MenubarSubContent.displayName = MenubarPrimitive.SubContent.displayName;
 const MenubarContent = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Content>
->(
-  (
+>((
     { className, align = 'start', alignOffset = -4, sideOffset = 8, ...props },
     ref
   ) => (
@@ -140,7 +140,7 @@ const MenubarCheckboxItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <MenubarPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <AiOutlineCheck className="h-4 w-4" />
       </MenubarPrimitive.ItemIndicator>
     </span>
     {children}
@@ -162,7 +162,7 @@ const MenubarRadioItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <MenubarPrimitive.ItemIndicator>
-        <Circle className="h-2 w-2 fill-current" />
+        <FiCircle className="h-2 w-2 fill-current" />
       </MenubarPrimitive.ItemIndicator>
     </span>
     {children}
@@ -200,20 +200,9 @@ const MenubarSeparator = React.forwardRef<
 ));
 MenubarSeparator.displayName = MenubarPrimitive.Separator.displayName;
 
-const MenubarShortcut = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
-  return (
-    <span
-      className={cn(
-        'ml-auto text-xs tracking-widest text-muted-foreground',
-        className
-      )}
-      {...props}
-    />
-  );
-};
+const MenubarShortcut = (props: React.HTMLAttributes<HTMLSpanElement>) => (
+  <span className="ml-auto text-xs tracking-widest text-muted-foreground" {...props} />
+);
 MenubarShortcut.displayname = 'MenubarShortcut';
 
 export {
