@@ -1,18 +1,54 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { Github, Twitter, MessageSquare, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ScrollIndicator from './ScrollIndicator';
 import ResumeButton from './ResumeButton';
+import { useEffect, useState, useCallback } from 'react';
 
 export default function HeroSection() {
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const fullText = 'FullStack Developer';
+
+  const animateText = useCallback(() => {
+    const typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && displayText === fullText) {
+      // Começa a deletar após uma pausa
+      setTimeout(() => setIsDeleting(true), 2000);
+      return;
+    }
+
+    if (isDeleting && displayText === '') {
+      // Começa a digitar novamente após uma pausa
+      setTimeout(() => setIsDeleting(false), 1000);
+      return;
+    }
+
+    const nextText = isDeleting
+      ? displayText.slice(0, -1)
+      : fullText.slice(0, displayText.length + 1);
+
+    const timeout = setTimeout(() => {
+      setDisplayText(nextText);
+    }, typeSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, fullText]);
+
+  useEffect(() => {
+    const timeout = animateText();
+    return () => {
+      if (timeout) timeout();
+    };
+  }, [animateText]);
+
   return (
     <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
       </div>
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,7 +61,12 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }}
           className="text-4xl md:text-6xl font-bold mb-6"
         >
-          Full Stack Developer
+          Ylanna Almeida
+          <br />
+          <span className="text-primary inline-flex items-center justify-center gap-2">
+            {displayText}
+            <span className="w-[3px] h-[1.2em] bg-primary inline-block animate-[blink_1s_steps(1)_infinite]" />
+          </span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}

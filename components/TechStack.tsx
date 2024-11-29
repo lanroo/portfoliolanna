@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { SiAmazon } from 'react-icons/si';
 
-// Importando ícones do react-icons
 import {
   SiReact,
   SiVuedotjs,
