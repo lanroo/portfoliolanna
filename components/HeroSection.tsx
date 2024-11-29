@@ -1,9 +1,28 @@
+'use client';
+
 import { motion } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Edges } from '@react-three/drei';
 import { Github, Twitter, MessageSquare, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ScrollIndicator from './ScrollIndicator';
 import ResumeButton from './ResumeButton';
 import { useEffect, useState, useCallback } from 'react';
+
+function Pyramid() {
+  return (
+    <mesh rotation={[0, 0.6, 0]}>
+      {/* Geometria da pirâmide */}
+      <coneGeometry args={[2, 2, 4]} />
+      {/* Material preto */}
+      <meshStandardMaterial color="black" />
+      {/* Adicionando arestas brancas */}
+      <Edges>
+        <lineBasicMaterial color="white" />
+      </Edges>
+    </mesh>
+  );
+}
 
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState('');
@@ -14,13 +33,11 @@ export default function HeroSection() {
     const typeSpeed = isDeleting ? 50 : 100;
 
     if (!isDeleting && displayText === fullText) {
-      // Começa a deletar após uma pausa
       setTimeout(() => setIsDeleting(true), 2000);
       return;
     }
 
     if (isDeleting && displayText === '') {
-      // Começa a digitar novamente após uma pausa
       setTimeout(() => setIsDeleting(false), 1000);
       return;
     }
@@ -44,9 +61,19 @@ export default function HeroSection() {
   }, [animateText]);
 
   return (
-    <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden">
+    <section className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
+      </div>
+
+      {/* Pirâmide 3D */}
+      <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
+        <Canvas style={{ width: 200, height: 200 }}>
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[2, 5, 2]} />
+          <Pyramid />
+          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={4} />
+        </Canvas>
       </div>
 
       <motion.div
