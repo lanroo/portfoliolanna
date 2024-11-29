@@ -71,7 +71,7 @@ export default function ProjectCard({
           {liveUrl && (
             <Button variant="outline" size="sm" asChild>
               <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                <Globe className="mr-2 h-4 w-4" /> Live Demo
+                <Globe className="mr-2 h-4 w-4" /> Acessar site
               </a>
             </Button>
           )}

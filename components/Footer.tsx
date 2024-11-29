@@ -18,11 +18,9 @@ export default function Footer() {
             viewport={{ once: true }}
             className="max-w-md"
           >
-            <h3 className="font-semibold text-base mb-3">About Me</h3>
+            <h3 className="font-semibold text-base mb-3">Sobre mim</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Full-stack developer passionate about creating innovative solutions. 
-              Specialized in both frontend and backend technologies, I love turning 
-              complex problems into simple, beautiful, and intuitive solutions.
+            Desenvolvedora Full Stack apaixonada por criar soluções inovadoras. Especializada em tecnologias de frontend e backend, adoro transformar problemas complexos em soluções simples, bonitas e intuitivas.
             </p>
           </motion.div>
 
@@ -34,11 +32,11 @@ export default function Footer() {
             transition={{ delay: 0.2 }}
             className="flex flex-col items-start"
           >
-            <h3 className="font-semibold text-base mb-3">Get in Touch</h3>
+            <h3 className="font-semibold text-base mb-3">Contatos</h3>
             <div className="flex flex-col gap-2 w-full max-w-xs">
               <Button variant="ghost" size="sm" className="justify-start h-8 px-2 w-full hover:bg-secondary" asChild>
                 <a href="mailto:your@email.com" className="text-sm">
-                  <Mail className="mr-2 h-3.5 w-3.5" /> Email Me
+                  <Mail className="mr-2 h-3.5 w-3.5" /> E-mail
                 </a>
               </Button>
               <Button variant="ghost" size="sm" className="justify-start h-8 px-2 w-full hover:bg-secondary" asChild>
@@ -59,7 +57,7 @@ export default function Footer() {
         >
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-muted-foreground flex items-center gap-1">
-              Made with <Heart className="h-3 w-3 text-red-500" /> © {currentYear}
+              Feito com <Heart className="h-3 w-3 text-red-500" /> © {currentYear}
             </p>
             <div className="flex items-center gap-3">
               <motion.a

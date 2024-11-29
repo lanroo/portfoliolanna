@@ -30,7 +30,7 @@ export default function ScrollIndicator() {
       }}
       className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center"
     >
-      <span className="text-sm text-muted-foreground mb-2">Scroll to explore</span>
+      <span className="text-sm text-muted-foreground mb-2">Role para explorar</span>
       <ChevronDown className="h-6 w-6 animate-bounce" />
     </motion.div>
   );

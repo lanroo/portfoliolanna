@@ -33,7 +33,7 @@ export default function HeroSection() {
           transition={{ delay: 0.2 }}
           className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
         >
-          Software Engineering graduate with a passion for creating elegant solutions through code. Currently pursuing post-graduation in Full Stack Development at PUC-Campinas.
+          Desenvolvedora Full Stack formada em Engenharia de Software, cursando pós-graduação em Desenvolvimento Full Stack na PUC-Campinas, com foco em soluções eficientes e inovadoras.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
