@@ -5,8 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Edges } from '@react-three/drei';
 import { FaGithub, FaTwitter, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
-import ScrollIndicator from './ScrollIndicator';
-import ResumeButton from './ResumeButton';
+// import ScrollIndicator from './ScrollIndicator';
 import { useEffect, useState, useCallback } from 'react';
 
 function Pyramid() {
@@ -106,7 +105,6 @@ export default function HeroSection() {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap items-center"
           >
-            <ResumeButton />
             <div className="flex gap-4 flex-wrap justify-center">
               <Button variant="outline" size="lg" asChild>
                 <a href="mailto:yladacz@gmail.com">
@@ -114,7 +112,7 @@ export default function HeroSection() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="https://wa.me/+5591985464442" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/+55919899999" target="_blank" rel="noopener noreferrer">
                   <FaWhatsapp className="mr-2 h-4 w-4" /> WhatsApp
                 </a>
               </Button>
@@ -133,7 +131,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      <ScrollIndicator />
+      {/* <ScrollIndicator /> */}
     </section>
   );
 }

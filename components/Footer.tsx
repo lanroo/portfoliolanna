@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope, FaWhatsapp, FaHeart } from 'react-icons/fa';
+import { AiFillGithub, AiOutlineTwitter, AiOutlineLinkedin, AiOutlineHeart } from 'react-icons/ai';
+import { HiOutlineMail } from 'react-icons/hi';
+import { RiMessageLine } from 'react-icons/ri';
 import { Button } from '@/components/ui/button';
 
 export default function Footer() {
@@ -10,43 +12,28 @@ export default function Footer() {
   return (
     <footer className="bg-secondary/30 border-t border-border">
       <div className="container max-w-5xl px-4 py-8 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {/* About Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-md"
-          >
-            <h3 className="font-semibold text-base mb-3">Sobre mim</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Desenvolvedora Full Stack apaixonada por criar soluções inovadoras. Especializada em tecnologias de frontend e backend, adoro transformar problemas complexos em soluções simples, bonitas e intuitivas.
-            </p>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col items-start"
-          >
-            <h3 className="font-semibold text-base mb-3">Contatos</h3>
-            <div className="flex flex-col gap-2 w-full max-w-xs">
-              <Button variant="ghost" size="sm" className="justify-start h-8 px-2 w-full hover:bg-secondary" asChild>
-                <a href="mailto:your@email.com" className="text-sm">
-                  <FaEnvelope className="mr-2 h-3.5 w-3.5" /> E-mail
-                </a>
-              </Button>
-              <Button variant="ghost" size="sm" className="justify-start h-8 px-2 w-full hover:bg-secondary" asChild>
-                <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer" className="text-sm">
-                  <FaWhatsapp className="mr-2 h-3.5 w-3.5" /> WhatsApp
-                </a>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
+        {/* Contact Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-col items-start mb-6"
+        >
+          <h3 className="font-semibold text-base mb-3">Get in Touch</h3>
+          <div className="flex flex-wrap gap-2 w-full max-w-xs">
+            <Button variant="ghost" size="sm" className="justify-start h-8 px-2 hover:bg-secondary" asChild>
+              <a href="mailto:your@email.com" className="text-sm">
+                <HiOutlineMail className="mr-2 h-3.5 w-3.5" /> Email Me
+              </a>
+            </Button>
+            <Button variant="ghost" size="sm" className="justify-start h-8 px-2 hover:bg-secondary" asChild>
+              <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer" className="text-sm">
+                <RiMessageLine className="mr-2 h-3.5 w-3.5" /> WhatsApp
+              </a>
+            </Button>
+          </div>
+        </motion.div>
 
         {/* Social Links & Copyright */}
         <motion.div
@@ -57,35 +44,35 @@ export default function Footer() {
         >
           <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-muted-foreground flex items-center gap-1">
-              Feito com <FaHeart className="h-3 w-3 text-red-500" /> © {currentYear}
+              Made with <AiOutlineHeart className="h-3 w-3 text-red-500" /> © {currentYear}
             </p>
             <div className="flex items-center gap-3">
               <motion.a
-                href="https://github.com/lanroo"
+                href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 className="text-muted-foreground hover:text-primary transition-colors p-1.5"
               >
-                <FaGithub className="h-4 w-4" />
+                <AiFillGithub className="h-4 w-4" />
               </motion.a>
               <motion.a
-                href="https://x.com/devingerr"
+                href="https://twitter.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 className="text-muted-foreground hover:text-primary transition-colors p-1.5"
               >
-                <FaTwitter className="h-4 w-4" />
+                <AiOutlineTwitter className="h-4 w-4" />
               </motion.a>
               <motion.a
-                href="https://www.linkedin.com/in/yladacs/"
+                href="https://linkedin.com/in/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 className="text-muted-foreground hover:text-primary transition-colors p-1.5"
               >
-                <FaLinkedin className="h-4 w-4" />
+                <AiOutlineLinkedin className="h-4 w-4" />
               </motion.a>
             </div>
           </div>

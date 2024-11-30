@@ -6,6 +6,9 @@ import HeroSection from '@/components/HeroSection';
 import ProjectCard from '@/components/ProjectCard';
 import TechStack from '@/components/TechStack';
 import Footer from '@/components/Footer';
+import AboutSection from '@/components/AboutSection';
+import ScrollProgress from '@/components/ScrollProgress';
+import PageIndicator from '@/components/PageIndicator';
 
 export default function Home() {
   const initialProjects = [
@@ -106,13 +109,18 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background">
-      <HeroSection />
-
-      {/* Tech Stack Section */}
-      <TechStack />
-
-      {/* Projects Section */}
-      <section className="py-20" id="projects">
+      <PageIndicator />
+      <ScrollProgress />
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="about">
+        <AboutSection />
+      </section>
+      <section id="tech-stack">
+        <TechStack />
+      </section>
+      <section id="projects" className="py-20">
         <div className="container px-4 mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -138,17 +146,18 @@ export default function Home() {
           </div>
           {!showMore && (
             <div className="text-center mt-12">
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={handleShowMore}
-                className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-md"
+                className="bg-black hover:bg-zinc-800 text-white px-6 py-3 rounded-md transition-colors duration-300"
               >
                 Ver Mais Projetos
-              </button>
+              </motion.button>
             </div>
           )}
         </div>
       </section>
-
       <Footer />
     </main>
   );
