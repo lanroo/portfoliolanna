@@ -89,7 +89,7 @@ Siga os passos abaixo para executar este projeto no seu ambiente local.
 
 ## 🌐 Acesse o Projeto Online
 
-[Veja o projeto ao vivo aqui](https://sites.vercel.app/)
+[Veja o projeto ao vivo aqui]([https://sites.vercel.app/](https://portfoliolan.netlify.app/))
 
 ## 📝 Licença
 
