@@ -30,13 +30,17 @@ export default function AboutMeSection() {
               {...fadeInScale}
               className="lg:col-span-4 flex flex-col items-center lg:items-start space-y-6"
             >
-              <div className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-black/5 shadow-2xl hover:ring-blue-500 transition-all duration-300">
+              <div
+                className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-black/5 shadow-2xl hover:ring-blue-500 transition-all duration-300"
+                onContextMenu={(e) => e.preventDefault()} 
+              >
                 <Image
                   src={profileImageUrl || '/fallback-image.jpg'}
                   alt="Minha Foto de Perfil"
                   fill
                   className="object-cover"
                   priority
+                  draggable="false" 
                 />
               </div>
               <div className="text-center lg:text-center">
