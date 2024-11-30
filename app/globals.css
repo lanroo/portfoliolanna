@@ -219,3 +219,13 @@ html {
 .button-hover-effect:hover::after {
   left: 100%;
 }
+
+.about-section {
+  background: hsl(var(--muted) / 0.9); 
+}
+
+.dark .about-section {
+  background: hsl(var(--muted-foreground) / 1); 
+}
+
+

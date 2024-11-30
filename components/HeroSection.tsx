@@ -3,9 +3,10 @@
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Edges } from '@react-three/drei';
-import { FaGithub, FaTwitter, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState, useCallback } from 'react';
+import ScrollIndicator from './ScrollIndicator';
 
 function Pyramid() {
   return (
@@ -56,7 +57,10 @@ export default function HeroSection() {
   }, [animateText]);
 
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden">
+    <section className="relative h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden mb-12">
+      {/* Gradient to about */}
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-[#fafafa]" />
+
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
       </div>
@@ -70,7 +74,6 @@ export default function HeroSection() {
             <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={4} />
           </Canvas>
         </div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,7 +99,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto px-4"
           >
-            Desenvolvedora Full Stack formada em Engenharia de Software, cursando pós-graduação em Desenvolvimento Full Stack na PUC-Campinas, com foco em soluções eficientes e inovadoras.
+            Formada em Engenharia de Software e cursando pós-graduação na PUC, acredito no poder da tecnologia para transformar ideias simples em ferramentas incríveis
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -107,24 +110,36 @@ export default function HeroSection() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
               <Button variant="outline" size="lg" className="w-full" asChild>
                 <a href="mailto:yladacz@gmail.com">
-                  <FaEnvelope className="mr-2 h-4 w-4" /> 
+                  <FaEnvelope className="mr-2 h-4 w-4" />
                   <span className="whitespace-nowrap">E-mail</span>
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="w-full" asChild>
-                <a href="https://wa.me/+55919899999" target="_blank" rel="noopener noreferrer">
-                  <FaWhatsapp className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">WhatsApp</span>
+                <a
+                  href="https://www.linkedin.com/in/yladacs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin className="mr-2 h-4 w-4" />
+                  <span className="whitespace-nowrap">LinkedIn</span>
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="w-full" asChild>
-                <a href="https://x.com/devingerr" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://x.com/devingerr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaTwitter className="mr-2 h-4 w-4" />
                   <span className="whitespace-nowrap">Twitter/X</span>
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="w-full" asChild>
-                <a href="https://github.com/lanroo" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/lanroo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaGithub className="mr-2 h-4 w-4" />
                   <span className="whitespace-nowrap">GitHub</span>
                 </a>
@@ -132,6 +147,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
         </motion.div>
+        <ScrollIndicator />
       </div>
     </section>
   );

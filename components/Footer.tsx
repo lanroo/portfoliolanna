@@ -58,7 +58,7 @@ export default function Footer() {
                 Twitter
               </a>
               <a 
-                href="https://linkedin.com/in/ylanna-almeida" 
+                href="https://www.linkedin.com/in/yladacs/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-zinc-400 hover:text-white transition-colors"

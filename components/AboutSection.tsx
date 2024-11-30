@@ -8,8 +8,8 @@ import ResumeButton from './ResumeButton';
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-[#fafafa] py-24" id="about">
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-[#fafafa]" />
+    <section className="relative bg-[#f0f4f8] py-24" id="about">
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-[#f0f4f8]" />
 
       <div className="container px-4 mx-auto">
         <motion.div
