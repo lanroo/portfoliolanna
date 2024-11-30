@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { AiOutlineDownload } from 'react-icons/ai'; // Substituição do ícone
+import { AiOutlineDownload } from 'react-icons/ai';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
@@ -10,7 +10,7 @@ export default function ResumeButton() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleDownload = async () => {
+  const handleOpen = async () => {
     try {
       setIsLoading(true);
 
@@ -19,18 +19,17 @@ export default function ResumeButton() {
       if (!resumeUrl) {
         throw new Error('Resume URL is not defined');
       }
-
-      window.location.href = resumeUrl;
+      window.open(resumeUrl, '_blank', 'noopener,noreferrer');
 
       toast({
         title: 'Sucesso!',
-        description: 'Redirecionando para download do currículo...',
+        description: 'Abrindo o currículo no navegador...',
       });
     } catch (error) {
-      console.error('Error redirecting to resume URL:', error);
+      console.error('Error opening resume URL:', error);
       toast({
         title: 'Erro',
-        description: 'Falha ao redirecionar para o download. Tente novamente.',
+        description: 'Falha ao abrir o currículo. Tente novamente.',
         variant: 'destructive',
       });
     } finally {
@@ -47,14 +46,14 @@ export default function ResumeButton() {
       <Button
         size="lg"
         className="bg-black hover:bg-zinc-800 text-white shadow-lg group relative overflow-hidden border border-zinc-800"
-        onClick={handleDownload}
+        onClick={handleOpen}
         disabled={isLoading}
       >
         <div className="absolute inset-0 bg-white/10 group-hover:translate-y-12 transition-transform duration-300" />
         <AiOutlineDownload
-          className={`mr-2 h-5 w-5 ${isLoading ? 'animate-spin' : 'animate-bounce'}`} // Ícone atualizado
+          className={`mr-2 h-5 w-5 ${isLoading ? 'animate-spin' : 'animate-bounce'}`}
         />
-        {isLoading ? 'Redirecionando...' : 'Download CV'}
+        {isLoading ? 'Abrindo...' : 'Abrir CV'}
       </Button>
     </motion.div>
   );
