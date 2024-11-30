@@ -37,14 +37,15 @@ export default function AboutMeSection() {
                 className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-black/5 shadow-2xl hover:ring-blue-500 transition-all duration-300"
                 onContextMenu={(e) => e.preventDefault()} 
               >
-               <Image
-                src="https://res.cloudinary.com/dggewyuon/image/upload/v1732999320/foto_agmr75.jpg"
-                alt="Minha Foto de Perfil"
-                fill
-                className="object-cover"
-                priority
-                unoptimized
+               <div className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-black/5 shadow-2xl hover:ring-blue-500 transition-all duration-300">
+                <img
+                    src="https://res.cloudinary.com/dggewyuon/image/upload/v1732999320/foto_agmr75.jpg"
+                    alt="Minha Foto de Perfil"
+                    className="object-cover w-full h-full"
+                    draggable="false"
                 />
+                </div>
+
               </div>
               <div className="text-center lg:text-center">
                 <h2 className="text-2xl font-bold text-zinc-900">Ylanna Almeida</h2>
