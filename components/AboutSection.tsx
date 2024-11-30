@@ -1,25 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import ResumeButton from './ResumeButton';
 
+// Animações predefinidas
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { delay: 0.2, duration: 0.6 },
 };
 
-console.log('Image URL:', process.env.NEXT_PUBLIC_IMAGE_URL);
-
-
 const fadeInScale = {
   initial: { opacity: 0, scale: 0.9 },
   animate: { opacity: 1, scale: 1 },
   transition: { delay: 0.3, duration: 0.5 },
 };
-
-const profileImageUrl = process.env.NEXT_PUBLIC_IMAGE_URL;
 
 export default function AboutMeSection() {
   return (
@@ -37,15 +32,12 @@ export default function AboutMeSection() {
                 className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-black/5 shadow-2xl hover:ring-blue-500 transition-all duration-300"
                 onContextMenu={(e) => e.preventDefault()} 
               >
-               <div className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-black/5 shadow-2xl hover:ring-blue-500 transition-all duration-300">
                 <img
-                    src="https://res.cloudinary.com/dggewyuon/image/upload/v1732999320/foto_agmr75.jpg"
-                    alt="Minha Foto de Perfil"
-                    className="object-cover w-full h-full"
-                    draggable="false"
+                  src="https://res.cloudinary.com/dggewyuon/image/upload/v1732999320/foto_agmr75.jpg"
+                  alt="Minha Foto de Perfil"
+                  className="object-cover w-full h-full"
+                  draggable="false" 
                 />
-                </div>
-
               </div>
               <div className="text-center lg:text-center">
                 <h2 className="text-2xl font-bold text-zinc-900">Ylanna Almeida</h2>
@@ -58,8 +50,9 @@ export default function AboutMeSection() {
               className="lg:col-span-8 space-y-6 text-zinc-600"
             >
               <div className="prose prose-zinc max-w-none space-y-6 text-justify leading-relaxed">
+              <h2 className="text-3xl font-bold mb-6 text-center relative -top-11">Sobre mim</h2>
                 <p>
-                  Oi, eu sou <strong>Ylanna</strong>, mas pode me chamar de Lanna! Sou formada em Engenharia de Software e atualmente estou cursando Pós-graduação em Fullstack na PUC.
+                  Oi, eu sou Ylanna, mas pode me chamar de Lanna! Sou formada em Engenharia de Software e atualmente estou cursando Pós-graduação em Fullstack na PUC.
                 </p>
                 <p>
                   No momento, estou desenvolvendo um projeto solidário, criando a página do <span className="text-blue-600 font-medium">Hemocentro Ceará</span> como Frontend Developer. Também estou trabalhando em uma plataforma Fullstack para uma empresa de recrutamento e seleção. Tenho <strong>3 anos de experiência</strong> como FullStack Developer.
