@@ -35,7 +35,7 @@ export default function AboutSection() {
                   priority
                 />
               </div>
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-center">
                 <h2 className="text-2xl font-bold text-zinc-900">Ylanna Almeida</h2>
                 <p className="text-zinc-500 mt-1">FullStack Developer</p>
               </div>
