@@ -58,7 +58,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden mb-12">
-      {/* Gradient to about */}
       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-[#fafafa]" />
 
       <div className="absolute inset-0 w-full h-full">
