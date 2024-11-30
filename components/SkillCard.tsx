@@ -17,7 +17,6 @@ const icons: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> 
   tool: FaTools, 
 };
 
-
 export default function SkillCard({ title, skills, icon, index }: SkillCardProps) {
   const Icon = icons[icon];
 
@@ -44,7 +43,7 @@ export default function SkillCard({ title, skills, icon, index }: SkillCardProps
           </CardTitle>
         </CardHeader>
         <CardContent className="flex-grow">
-          <ul className="space-y-2">
+          <ul>
             {skills.map((skill, idx) => (
               <motion.li
                 key={skill}

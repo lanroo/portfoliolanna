@@ -7,7 +7,6 @@ import ProjectCard from '@/components/ProjectCard';
 import TechStack from '@/components/TechStack';
 import Footer from '@/components/Footer';
 import AboutSection from '@/components/AboutSection';
-import ScrollProgress from '@/components/ScrollProgress';
 import PageIndicator from '@/components/PageIndicator';
 
 export default function Home() {
@@ -110,8 +109,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <PageIndicator />
-      <ScrollProgress />
-      <section id="home">
+        <section id="home">
         <HeroSection />
       </section>
       <section id="about">
