@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ResumeButton from './ResumeButton';
 
-// Animações predefinidas
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -16,6 +15,8 @@ const fadeInScale = {
   animate: { opacity: 1, scale: 1 },
   transition: { delay: 0.3, duration: 0.5 },
 };
+
+const profileImageUrl = process.env.NEXT_PUBLIC_IMAGE_URL;
 
 export default function AboutMeSection() {
   return (
@@ -31,7 +32,7 @@ export default function AboutMeSection() {
             >
               <div className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-black/5 shadow-2xl hover:ring-blue-500 transition-all duration-300">
                 <Image
-                  src="/your-photo.jpg" 
+                  src={profileImageUrl || '/fallback-image.jpg'}
                   alt="Minha Foto de Perfil"
                   fill
                   className="object-cover"

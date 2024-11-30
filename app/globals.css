@@ -233,4 +233,9 @@ html {
   background: hsl(var(--muted-foreground) / 1); 
 }
 
+img {
+  pointer-events: none;
+  user-select: none; 
+}
+
 
