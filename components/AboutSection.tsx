@@ -10,6 +10,9 @@ const fadeInUp = {
   transition: { delay: 0.2, duration: 0.6 },
 };
 
+console.log('Image URL:', process.env.NEXT_PUBLIC_IMAGE_URL);
+
+
 const fadeInScale = {
   initial: { opacity: 0, scale: 0.9 },
   animate: { opacity: 1, scale: 1 },
@@ -34,13 +37,13 @@ export default function AboutMeSection() {
                 className="relative w-48 h-48 rounded-full overflow-hidden ring-4 ring-black/5 shadow-2xl hover:ring-blue-500 transition-all duration-300"
                 onContextMenu={(e) => e.preventDefault()} 
               >
-                <Image
-                  src={profileImageUrl || '/fallback-image.jpg'}
-                  alt="Minha Foto de Perfil"
-                  fill
-                  className="object-cover"
-                  priority
-                  draggable="false" 
+               <Image
+                src={process.env.NEXT_PUBLIC_IMAGE_URL || '/fallback-image.jpg'}
+                alt="Minha Foto de Perfil"
+                fill
+                className="object-cover"
+                priority
+                unoptimized 
                 />
               </div>
               <div className="text-center lg:text-center">
