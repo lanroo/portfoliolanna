@@ -120,7 +120,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-3xl font-bold mb-12 text-center"
           >
-            Projetoss
+            Projetos
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
