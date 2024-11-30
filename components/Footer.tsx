@@ -3,79 +3,113 @@
 import { motion } from 'framer-motion';
 import { AiFillGithub, AiOutlineTwitter, AiOutlineLinkedin, AiOutlineHeart } from 'react-icons/ai';
 import { HiOutlineMail } from 'react-icons/hi';
-import { RiMessageLine } from 'react-icons/ri';
+// import { RiMessageLine } from 'react-icons/ri';
 import { Button } from '@/components/ui/button';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary/30 border-t border-border">
-      <div className="container max-w-5xl px-4 py-8 mx-auto">
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="flex flex-col items-start mb-6"
-        >
-          <h3 className="font-semibold text-base mb-3">Get in Touch</h3>
-          <div className="flex flex-wrap gap-2 w-full max-w-xs">
-            <Button variant="ghost" size="sm" className="justify-start h-8 px-2 hover:bg-secondary" asChild>
-              <a href="mailto:your@email.com" className="text-sm">
-                <HiOutlineMail className="mr-2 h-3.5 w-3.5" /> Email Me
-              </a>
-            </Button>
-            <Button variant="ghost" size="sm" className="justify-start h-8 px-2 hover:bg-secondary" asChild>
-              <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer" className="text-sm">
-                <RiMessageLine className="mr-2 h-3.5 w-3.5" /> WhatsApp
-              </a>
-            </Button>
-          </div>
-        </motion.div>
+    <footer className="bg-zinc-50 border-t border-zinc-100">
+      <div className="container max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider">Contato</h3>
+            <div className="flex flex-col space-y-2">
+              <Button variant="ghost" size="sm" className="justify-start w-fit" asChild>
+                <a 
+                  href="mailto:yladacz@gmail.com"
+                  className="text-zinc-600 hover:text-zinc-900 transition-colors"
+                >
+                  <HiOutlineMail className="mr-2 h-4 w-4" />
+                  yladacz@gmail.com
+                </a>
+              </Button>
+              {/* <Button variant="ghost" size="sm" className="justify-start w-fit" asChild>
+                <a 
+                  href="https://wa.me/+5585999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-600 hover:text-zinc-900 transition-colors"
+                >
+                  <RiMessageLine className="mr-2 h-4 w-4" />
+                  WhatsApp
+                </a>
+              </Button> */}
+            </div>
+          </motion.div>
 
-        {/* Social Links & Copyright */}
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-4"
+          >
+            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider">Social</h3>
+            <div className="flex flex-col space-y-2">
+              <a 
+                href="https://github.com/lanroo" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                <AiFillGithub className="mr-2 h-4 w-4" />
+                GitHub
+              </a>
+              <a 
+                href="https://twitter.com/devingerr" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                <AiOutlineTwitter className="mr-2 h-4 w-4" />
+                Twitter
+              </a>
+              <a 
+                href="https://linkedin.com/in/ylanna-almeida" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                <AiOutlineLinkedin className="mr-2 h-4 w-4" />
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Location */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="space-y-4"
+          >
+            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider">Local</h3>
+            <p className="text-zinc-600">
+              Belém, PA<br />
+              Brazil
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Copyright */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="pt-4 border-t border-border"
+          className="mt-12 pt-8 border-t border-zinc-200"
         >
-          <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-muted-foreground flex items-center gap-1">
-              Made with <AiOutlineHeart className="h-3 w-3 text-red-500" /> © {currentYear}
-            </p>
-            <div className="flex items-center gap-3">
-              <motion.a
-                href="https://github.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="text-muted-foreground hover:text-primary transition-colors p-1.5"
-              >
-                <AiFillGithub className="h-4 w-4" />
-              </motion.a>
-              <motion.a
-                href="https://twitter.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="text-muted-foreground hover:text-primary transition-colors p-1.5"
-              >
-                <AiOutlineTwitter className="h-4 w-4" />
-              </motion.a>
-              <motion.a
-                href="https://linkedin.com/in/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="text-muted-foreground hover:text-primary transition-colors p-1.5"
-              >
-                <AiOutlineLinkedin className="h-4 w-4" />
-              </motion.a>
-            </div>
-          </div>
+          <p className="text-center text-sm text-zinc-500 flex items-center justify-center gap-1">
+            Feito com <AiOutlineHeart className="h-3 w-3 text-red-500" /> © {currentYear} Ylanna Almeida
+          </p>
         </motion.div>
       </div>
     </footer>

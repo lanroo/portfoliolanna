@@ -110,8 +110,6 @@ section {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 0.8);
 }
-
-/* Intersection Observer animations */
 .section-animate {
   opacity: 0;
   transform: translateY(20px);
