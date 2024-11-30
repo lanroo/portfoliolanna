@@ -38,12 +38,12 @@ export default function AboutMeSection() {
                 onContextMenu={(e) => e.preventDefault()} 
               >
                <Image
-                src={process.env.NEXT_PUBLIC_IMAGE_URL || '/fallback-image.jpg'}
+                src="https://res.cloudinary.com/dggewyuon/image/upload/v1732999320/foto_agmr75.jpg"
                 alt="Minha Foto de Perfil"
                 fill
                 className="object-cover"
                 priority
-                unoptimized 
+                unoptimized
                 />
               </div>
               <div className="text-center lg:text-center">
