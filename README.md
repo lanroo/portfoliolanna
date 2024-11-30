@@ -87,10 +87,6 @@ Siga os passos abaixo para executar este projeto no seu ambiente local.
 - **HeroSection**: Animação com digitação simulada do título "FullStack Developer" e uma pirâmide 3D rotativa.
 - **TechStack**: Representação visual e interativa das tecnologias utilizadas.
 
-## 🌐 Acesse o Projeto Online
-
-[Veja o projeto ao vivo aqui](https://sites.vercel.app/)
-
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e adaptá-lo conforme necessário.
