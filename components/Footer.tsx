@@ -79,7 +79,6 @@ export default function Footer() {
           >
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Local</h3>
             <p className="text-zinc-400">
-              Belém, PA<br />
               Brazil
             </p>
           </motion.div>

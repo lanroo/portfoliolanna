@@ -1,13 +1,10 @@
+'use client';
+
 import './globals.css';
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  title: 'Portfólio Developer',
-};
 
 export default function RootLayout({
   children,
@@ -16,7 +13,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Portfólio Developer</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Meu portfólio como desenvolvedora fullstack." />
+      </head>
+      <body className={`${inter.className} relative`}>
         {children}
         <Toaster />
       </body>
