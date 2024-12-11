@@ -49,21 +49,30 @@ export default function App() {
               Ver CV
             </button>
 
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="font-medium text-gray-900 mb-2">Interesses</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Filmes Sci-fi', 'Tecnologia', 'Games', 'Inovação', 'Pets'].map(
-                  (interest) => (
-                    <span
-                      key={interest}
-                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
-                    >
-                      {interest}
-                    </span>
-                  )
-                )}
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Interesses</h3>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { name: 'Filmes Sci-fi', color: 'hover:bg-pink-200' },
+                { name: 'Tecnologia', color: 'hover:bg-blue-200' },
+                { name: 'Inteligência Artificial', color: 'hover:bg-green-200' },
+                { name: 'Games', color: 'hover:bg-yellow-200' },
+                { name: 'Inovação', color: 'hover:bg-purple-200' },
+                { name: 'Pets', color: 'hover:bg-orange-200' },
+                { name: 'Leitura', color: 'hover:bg-teal-200' },
+                { name: 'Música', color: 'hover:bg-red-200' },
+              ].map((interest) => (
+                <div
+                  key={interest.name}
+                  className={`group px-4 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium cursor-pointer transition-all duration-200 shadow-sm ${interest.color}`}
+                  title={interest.name}
+                >
+                  {interest.name}
+                </div>
+              ))}
             </div>
+          </div>
+
           </motion.div>
 
           {/* Content Section */}
