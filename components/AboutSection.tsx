@@ -33,7 +33,7 @@ export default function AboutMeSection() {
                 onContextMenu={(e) => e.preventDefault()} 
               >
                 <img
-                  src="https://res.cloudinary.com/dggewyuon/image/upload/v1732999320/foto_agmr75.jpg"
+                  src="https://res.cloudinary.com/dgmhjjizh/image/upload/v1733874841/mfafmshl6kl3kp1rqilb.png"
                   alt="Minha Foto de Perfil"
                   className="object-cover w-full h-full"
                   draggable="false" 
@@ -52,24 +52,25 @@ export default function AboutMeSection() {
               <div className="prose prose-zinc max-w-none space-y-6 text-justify leading-relaxed">
               <h2 className="text-3xl font-bold mb-6 text-center relative -top-11">Sobre mim</h2>
                 <p>
-                  Oi, eu sou Ylanna, mas pode me chamar de Lanna! Sou formada em Engenharia de Software e atualmente estou cursando Pós-graduação em Fullstack na PUC.
+                Oi, eu sou Ylanna, mas pode me chamar de Lanna! Sou formada em Engenharia de Software e atualmente estou cursando Pós-graduação em Desenvolvimento Fullstack na PUC.
                 </p>
                 <p>
-                  No momento, estou desenvolvendo um projeto solidário, criando a página do <span className="text-blue-600 font-medium">Hemocentro Ceará</span> como Frontend Developer. Também estou trabalhando em uma plataforma Fullstack para uma empresa de recrutamento e seleção. Tenho <strong>3 anos de experiência</strong> como FullStack Developer.
+                No momento, estou desenvolvendo um projeto solidário, recriando a página do <span className="text-blue-600 font-medium">Hemocentro Ceará</span> como Frontend Developer. em um time colaborativo e diverso, e também trabalho no desenvolvimento de uma plataforma Fullstack para uma empresa de recrutamento e seleção. São <strong>3 anos de experiência</strong> como FullStack Developer, onde aprendi que cada linha de código é uma oportunidade de resolver problemas e criar um impacto positivo na sociedade.
                 </p>
                 <p>
-                  Desde pequena, sempre fui fascinada por tecnologia. Amo transformar ideias em soluções práticas e criativas, combinando raciocínio lógico e imaginação.
+                Minha paixão por tecnologia começou cedo, inspirada pelos meus irmãos mais velhos, que sempre tiveram contato com computadores e estavam mergulhados em conhecimentos que me fascinavam. Foi a partir dessas primeiras experiências que descobri o encanto de transformar ideias em soluções criativas e práticas. Adoro o desafio de combinar lógica e imaginação para construir algo que realmente tenha impacto e faça a diferença.
+
                 </p>
                 <div className="border-l-4 border-zinc-200 pl-6 my-8">
                   <p className="italic text-zinc-500">
-                    "Quando não estou na frente do computador, adoro assistir filmes que me fazem pensar (como <strong>Interestelar</strong>, meu favorito), brincar com meus bichinhos (gatos e uma doguinha) e explorar novos jogos e séries."
+                    "Quando não estou programando, você pode me encontrar assistindo filmes que desafiam a mente <strong>como Interestelar</strong>, meu favorito), brincando com meus bichinhos de estimação ou mergulhando em novos jogos ou séries sobre batalhas cósmicas.
                   </p>
                 </div>
                 <p>
-                  Sou apaixonada por compartilhar ideias e aprender com perspectivas diferentes. Sempre acredito que todos têm algo interessante a ensinar.
+                Sou apaixonada por troca de ideias e aprendizado contínuo. Acredito que cada pessoa carrega uma perspectiva única, e aprender com os outros é uma das coisas que mais valorizo.
                 </p>
                 <p>
-                  Fico muito feliz que você esteja aqui! Sinta-se à vontade para explorar meu portfólio e entrar em contato comigo se quiser conversar sobre ideias ou projetos.
+                Estou muito feliz que você tenha passado por aqui! Sinta-se à vontade para explorar meu portfólio e, se quiser trocar ideias ou falar sobre projetos, será um prazer conversar com você.
                 </p>
               </div>
             </motion.div>
