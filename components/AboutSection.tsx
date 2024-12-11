@@ -10,18 +10,12 @@ const fadeIn = {
   transition: { duration: 0.6 },
 };
 
-const fadeInScale = {
-  initial: { opacity: 0, scale: 0.9 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { delay: 0.3, duration: 0.5 },
-};
-
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Links .env
-  const resumePortuguese = process.env.NEXT_PUBLIC_RESUME_PT; 
-  const resumeEnglish = process.env.NEXT_PUBLIC_RESUME_EN; 
+  const resumePortuguese = process.env.NEXT_PUBLIC_RESUME_PT;
+  const resumeEnglish = process.env.NEXT_PUBLIC_RESUME_EN;
 
   const toggleModal = () => setIsModalOpen((prev) => !prev);
 
@@ -29,8 +23,54 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       <section className="container mx-auto px-4 py-16 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Content Section - Left */}
-          <motion.div className="lg:col-span-8 space-y-8" {...fadeIn}>
+          {/* Profile Section */}
+          <motion.div
+            className="lg:col-span-4 lg:order-2 order-1 flex flex-col items-center space-y-6"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full opacity-75 group-hover:opacity-100 blur transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative">
+                <img
+                  src="https://res.cloudinary.com/dgmhjjizh/image/upload/v1733874841/mfafmshl6kl3kp1rqilb.png"
+                  alt="Ylanna Almeida"
+                  className="w-48 h-48 object-cover rounded-full shadow-lg lg:order-1 order-2"
+                />
+              </div>
+            </div>
+
+            <button
+              onClick={toggleModal}
+              className="w-full px-6 py-3 bg-black text-white rounded-lg shadow-lg hover:bg-gray-800 hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2 font-medium"
+            >
+              <FileText className="w-5 h-5" />
+              Ver CV
+            </button>
+
+            <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-medium text-gray-900 mb-2">Interesses</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Filmes Sci-fi', 'Tecnologia', 'Games', 'Inovação', 'Pets'].map(
+                  (interest) => (
+                    <span
+                      key={interest}
+                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                    >
+                      {interest}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Content Section */}
+          <motion.div
+            className="lg:col-span-8 lg:order-1 order-2 space-y-8 text-center lg:text-left"
+            {...fadeIn}
+          >
             <div className="space-y-6">
               <h1 className="text-4xl font-bold text-gray-900">
                 Ylanna Almeida
@@ -41,7 +81,7 @@ export default function App() {
 
               <div className="prose prose-lg text-gray-600 max-w-none space-y-6 text-justify">
                 <p className="lead text-lg">
-                Com 3 anos de experiência em desenvolvimento, utilizo minha criatividade e expertise técnica para criar soluções inovadoras que simplificam e resolvem desafios do dia a dia.
+                  Com 3 anos de experiência em desenvolvimento, utilizo minha criatividade e expertise técnica para criar soluções inovadoras que simplificam e resolvem desafios do dia a dia.
                 </p>
 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
@@ -57,10 +97,10 @@ export default function App() {
                   Minha jornada na tecnologia começou através da inspiração dos meus irmãos, que me apresentaram ao fascinante mundo da computação. Foi a partir dessas primeiras experiências que descobri o encanto de transformar ideias em soluções criativas e práticas. Adoro o desafio de combinar lógica e imaginação para construir algo que realmente tenha impacto e faça a diferença.
                 </p>
                 <p>
-                Estou muito feliz que você tenha passado por aqui! Sinta-se à vontade para explorar meu portfólio e, se quiser trocar ideias ou falar sobre projetos, será um prazer conversar com você.
+                  Estou muito feliz que você tenha passado por aqui! Sinta-se à vontade para explorar meu portfólio e, se quiser trocar ideias ou falar sobre projetos, será um prazer conversar com você.
                 </p>
 
-                <div className="flex gap-4 mt-6">
+                <div className="flex gap-4 mt-6 justify-center lg:justify-start">
                   <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
                     <Github className="w-6 h-6" />
                   </a>
@@ -70,53 +110,6 @@ export default function App() {
                   <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
                     <Mail className="w-6 h-6" />
                   </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Profile Section - Right */}
-          <motion.div
-            className="lg:col-span-4 space-y-6"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="sticky top-8 space-y-6">
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full opacity-75 group-hover:opacity-100 blur transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative">
-                  <img
-                    src="https://res.cloudinary.com/dgmhjjizh/image/upload/v1733874841/mfafmshl6kl3kp1rqilb.png"
-                    alt="Ylanna Almeida"
-                    className="w-full h-30 object-cover rounded-full shadow-lg"
-                  />
-                </div>
-              </div>
-
-              {/* Botão para abrir o modal */}
-              <button
-                onClick={toggleModal}
-                className="w-full px-6 py-3 bg-black text-white rounded-lg shadow-lg hover:bg-gray-800 hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2 font-medium"
-              >
-                <FileText className="w-5 h-5" />
-                Ver CV
-              </button>
-
-
-              <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                <h3 className="font-medium text-gray-900 mb-2">Interesses</h3>
-                <div className="flex flex-wrap gap-2">
-                  {['Filmes Sci-fi', 'Tecnologia', 'Games', 'Inovação', 'Pets'].map(
-                    (interest) => (
-                      <span
-                        key={interest}
-                        className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
-                      >
-                        {interest}
-                      </span>
-                    )
-                  )}
                 </div>
               </div>
             </div>
@@ -156,7 +149,6 @@ export default function App() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
