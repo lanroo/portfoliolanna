@@ -17,6 +17,28 @@ body {
   font-family: 'Inter', sans-serif; 
 }
 
+/* Carousel TechStack Set */
+.slick-prev, .slick-next {
+  color: hsl(var(--primary));
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  color: hsl(var(--primary-foreground));
+}
+
+.slick-dots li button:before {
+  color: hsl(var(--muted-foreground));
+  opacity: 0.7;
+}
+
+.slick-dots li.slick-active button:before {
+  color: hsl(var(--primary));
+  opacity: 1;
+}
+
+
 /* Margintop img aboutme */
 .lg\:col-span-4.flex.flex-col.items-center.lg\:items-start.space-y-6 {
   margin-top: 2rem;
