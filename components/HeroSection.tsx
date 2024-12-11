@@ -107,13 +107,23 @@ export default function HeroSection() {
             className="w-full px-4"
           >
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
-              <Button variant="outline" size="lg" className="w-full" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+                asChild
+              >
                 <a href="mailto:yladacz@gmail.com">
                   <FaEnvelope className="mr-2 h-4 w-4" />
                   <span className="whitespace-nowrap">E-mail</span>
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="w-full" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+                asChild
+              >
                 <a
                   href="https://www.linkedin.com/in/yladacs/"
                   target="_blank"
@@ -123,7 +133,12 @@ export default function HeroSection() {
                   <span className="whitespace-nowrap">LinkedIn</span>
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="w-full" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+                asChild
+              >
                 <a
                   href="https://x.com/devingerr"
                   target="_blank"
@@ -133,7 +148,12 @@ export default function HeroSection() {
                   <span className="whitespace-nowrap">Twitter/X</span>
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="w-full" asChild>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+                asChild
+              >
                 <a
                   href="https://github.com/lanroo"
                   target="_blank"
