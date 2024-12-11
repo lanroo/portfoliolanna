@@ -93,15 +93,23 @@ export default function App() {
                   Com 3 anos de experiência em desenvolvimento, utilizo minha criatividade e expertise técnica para criar soluções inovadoras que simplificam e resolvem desafios do dia a dia.
                 </p>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Atualmente</h3>
-                  <ul className="space-y-3">
-                    <li>🎓 Pós-graduação em Desenvolvimento Fullstack na PUC</li>
-                    <li>💻 Desenvolvendo projeto solidário para o Hemocentro Ceará</li>
-                    <li>🚀 Construindo plataforma Fullstack para recrutamento</li>
+                <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 border-b pb-2 border-gray-200">Atualmente</h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-center gap-2">
+                      <span className="text-lg">🎓</span>
+                      <span className="hover:text-blue-600 transition-colors">Pós-graduação em Desenvolvimento Fullstack na PUC</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-lg">💻</span>
+                      <span className="hover:text-blue-600 transition-colors">Desenvolvendo projeto solidário para o Hemocentro Ceará</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-lg">🚀</span>
+                      <span className="hover:text-blue-600 transition-colors">Construindo plataforma Fullstack para recrutamento</span>
+                    </li>
                   </ul>
                 </div>
-
                 <p>
                   Minha jornada na tecnologia começou através da inspiração dos meus irmãos, que me apresentaram ao fascinante mundo da computação. Foi a partir dessas primeiras experiências que descobri o encanto de transformar ideias em soluções criativas e práticas. Adoro o desafio de combinar lógica e imaginação para construir algo que realmente tenha impacto e faça a diferença.
                 </p>
