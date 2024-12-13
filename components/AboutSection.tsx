@@ -84,7 +84,7 @@ export default function App() {
               <h1 className="text-4xl font-bold text-gray-900">
                 Ylanna Almeida
                 <span className="block text-xl font-normal text-gray-600 mt-2">
-                  Engenheira de Software | Desenvolvedora Fullstack
+                  Engenheira de Software | Desenvolvedora Web
                 </span>
               </h1>
 

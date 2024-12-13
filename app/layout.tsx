@@ -17,7 +17,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Portfólio Developer</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Meu portfólio como desenvolvedora fullstack." />
+        <meta name="description" content="Meu portfólio como desenvolvedora Web." />
       </head>
       <body className={`${inter.className} relative`}>
         {children}

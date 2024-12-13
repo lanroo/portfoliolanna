@@ -23,7 +23,7 @@ function Pyramid() {
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const fullText = 'FullStack Developer';
+  const fullText = 'Web Developer';
 
   const animateText = useCallback(() => {
     const typeSpeed = isDeleting ? 50 : 100;

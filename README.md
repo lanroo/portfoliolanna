@@ -84,7 +84,7 @@ Siga os passos abaixo para executar este projeto no seu ambiente local.
 
 ## 🌟 Destaques
 
-- **HeroSection**: Animação com digitação simulada do título "FullStack Developer" e uma pirâmide 3D rotativa.
+- **HeroSection**: Animação com digitação simulada do título Web Developer" e uma pirâmide 3D rotativa.
 - **TechStack**: Representação visual e interativa das tecnologias utilizadas.
 
 ## 📝 Licença
