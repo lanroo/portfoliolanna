@@ -1,7 +1,7 @@
 
 # Meu Portfólio Profissional
 
-Bem-vindo ao meu portfólio profissional! 🚀 Este projeto foi desenvolvido para destacar minhas habilidades como **Desenvolvedora Full Stack** e apresentar meu trabalho de maneira visual e interativa.
+Bem-vindo ao meu portfólio profissional! 🚀 Este projeto foi desenvolvido para destacar minhas habilidades como **Desenvolvedora Web** e apresentar meu trabalho de maneira visual e interativa.
 
 ## 🎨 Funcionalidades Principais
 

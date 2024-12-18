@@ -12,7 +12,7 @@ import PageIndicator from '@/components/PageIndicator';
 export default function Home() {
   const initialProjects = [
     {
-      title: 'Madil Carreiras',
+      title: 'Site de Recrutamento e Seleção - Madil Carreiras',
       description:
         'Uma plataforma de carreiras responsiva construída com React, Tailwind CSS e Vite.',
       image:
@@ -32,6 +32,16 @@ export default function Home() {
       liveUrl: 'https://hivexbank.netlify.app/',
     },
     {
+      title: 'Site de Engenharia e Segurança do Trabalho',
+      description:
+        'Website institucional da Atest, destacando serviços de engenharia de segurança do trabalho, histórico, depoimentos, parceiros e contato, com design moderno e integração ao WhatsApp.',
+      image:
+        'https://res.cloudinary.com/dggewyuon/image/upload/v1734531416/25_iwfkxr.png',
+      tags: ['TypeScript', 'React', 'Tailwind'],
+      githubUrl: 'https://github.com/lanroo/atest',
+      liveUrl: 'https://atest-tawny.vercel.app/',
+    },
+    {
       title: 'ArbiGenius',
       description:
         'Backend API - Plataforma de arbitragem de criptomoedas feita com Python Flask.',
@@ -49,15 +59,6 @@ export default function Home() {
         'https://blog.meugrupo.vip/wp-content/uploads/2022/11/WhatsApp-Automation-for-WordPress-1024x536.png',
       tags: ['Python', 'Flask', 'Docker', 'Selenium'],
       githubUrl: 'https://github.com/lanroo/wppautomation',
-    },
-    {
-      title: 'API de Leitura de Medição',
-      description:
-        'API para leitura automatizada de medições de água e gás a partir de imagens enviadas em base64 e gemini.',
-      image:
-        'https://res.cloudinary.com/dggewyuon/image/upload/v1732901357/imagem_vtdzr2.png',
-      tags: ['Node', 'Express', 'TypeScript', 'Docker', 'API Gemini'],
-      githubUrl: 'https://github.com/lanroo/MeasurementReadAPI',
     },
     {
       title: 'Downloader',
