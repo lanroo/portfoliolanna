@@ -42,14 +42,24 @@ export default function Home() {
       liveUrl: 'https://atest-tawny.vercel.app/',
     },
     {
-      title: 'ArbiGenius',
+      title: 'Blog Devinger',
       description:
-        'Backend API - Plataforma de arbitragem de criptomoedas feita com Python Flask.',
+        'Blog de programação moderno e interativo, compartilhando dicas, códigos e projetos, com design responsivo e navegação intuitiva',
       image:
-        'https://fenixconsultoria.com.br/admin/cadastros/blog/fotos/1656102160.jpg',
-      tags: ['Python', 'Flask', 'Vue', 'Vite', 'Tailwind'],
-      githubUrl: 'https://github.com/lanroo/ArbiGenius',
-      liveUrl: 'https://project3.com',
+        'https://res.cloudinary.com/dggewyuon/image/upload/v1734532523/devinger_okuzte.png',
+      tags: ['React', 'Tailwind ', 'Framer Motion', 'ESLint', 'Vite'],
+      githubUrl: 'https://github.com/lanroo/blogdevinger',
+      liveUrl: 'https://blogdevingerr.vercel.app/',
+    },
+    {
+      title: 'FlashFood Cardápio',
+      description:
+        'Este é um site de cardápios digitais interativos em desenvolvimento, com foco na visualização de menus de restaurantes de forma prática.',
+      image:
+        'https://res.cloudinary.com/dggewyuon/image/upload/v1734541784/flash_lzcmzq.png',
+      tags: ['React', 'Vite', 'Tailwind', 'Axios'],
+      githubUrl: 'https://github.com/lanroo/cardapioR',
+      liveUrl: 'https://flashfoodcardapio.vercel.app/',
     },
     {
       title: 'Automação Whatsapp',
