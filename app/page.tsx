@@ -10,7 +10,7 @@ import AboutSection from '@/components/AboutSection';
 import PageIndicator from '@/components/PageIndicator';
 
 export default function Home() {
-  const initialProjects = [
+  const allProjects = [
     {
       title: 'Site de Recrutamento e Seleção - Madil Carreiras',
       description:
@@ -79,9 +79,6 @@ export default function Home() {
       tags: ['Python', 'Flask', 'Socket.IO', 'Bootstrap 4'],
       githubUrl: 'https://github.com/lanroo/downloadering',
     },
-  ];
-
-  const additionalProjects = [
     {
       title: 'Paint Web - Drawart',
       description:
@@ -99,28 +96,26 @@ export default function Home() {
       tags: ['React', 'Express', 'ESlint'],
       githubUrl: 'https://github.com/yourusername/portfolio-builder',
     },
-    {
-      title: 'AI Chat Assistant',
-      description:
-        'Assistente de chat inteligente baseado em inteligência artificial e Flask.',
-      image: 'https://via.placeholder.com/300x200',
-      tags: ['Python', 'Flask', 'AI', 'Chatbot'],
-      githubUrl: 'https://github.com/yourusername/ai-chat-assistant',
-    },
   ];
 
-  const [projects, setProjects] = useState(initialProjects);
-  const [showMore, setShowMore] = useState(false);
+  const [displayedProjects, setDisplayedProjects] = useState(allProjects.slice(0, 6));
+  const [showingMore, setShowingMore] = useState(false);
 
   const handleShowMore = () => {
-    setProjects((prevProjects) => [...prevProjects, ...additionalProjects]);
-    setShowMore(true);
+    setDisplayedProjects(allProjects);
+    setShowingMore(true);
+  };
+
+  const handleShowLess = () => {
+    setDisplayedProjects(allProjects.slice(0, 6));
+    setShowingMore(false);
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <main className="min-h-screen bg-background">
       <PageIndicator />
-        <section id="home">
+      <section id="home">
         <HeroSection />
       </section>
       <section id="about">
@@ -140,7 +135,7 @@ export default function Home() {
             Projetos
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <ProjectCard
                 key={index}
                 title={project.title}
@@ -153,18 +148,16 @@ export default function Home() {
               />
             ))}
           </div>
-          {!showMore && (
-            <div className="text-center mt-12">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleShowMore}
-                className="bg-black hover:bg-zinc-800 text-white px-6 py-3 rounded-md transition-colors duration-300"
-              >
-                Ver Mais Projetos
-              </motion.button>
-            </div>
-          )}
+          <div className="text-center mt-12">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={showingMore ? handleShowLess : handleShowMore}
+              className="bg-black hover:bg-zinc-800 text-white px-6 py-3 rounded-md transition-colors duration-300"
+            >
+              {showingMore ? 'Ver Menos' : 'Ver Mais Projetos'}
+            </motion.button>
+          </div>
         </div>
       </section>
       <Footer />
