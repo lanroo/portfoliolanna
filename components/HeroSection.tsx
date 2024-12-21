@@ -1,12 +1,11 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Edges } from '@react-three/drei';
-import { FaGithub, FaTwitter, FaEnvelope, FaLinkedin, FaGlobe } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import { useEffect, useState, useCallback } from 'react';
 import ScrollIndicator from './ScrollIndicator';
 import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 function Pyramid() {
   return (
@@ -21,11 +20,10 @@ function Pyramid() {
 }
 
 export default function HeroSection() {
-  const { t, i18n } = useTranslation(); 
+  const { t } = useTranslation();
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); 
-  const fullText = t('hero.role'); 
+  const fullText = t('hero.role');
 
   const animateText = useCallback(() => {
     const typeSpeed = isDeleting ? 50 : 100;
@@ -58,44 +56,11 @@ export default function HeroSection() {
     };
   }, [animateText]);
 
-  const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
-    setMenuOpen(false); 
-  };
-
   return (
     <section className="relative h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden mb-12">
-      <div
-        className="absolute top-4 right-4 z-50"
-        onMouseEnter={() => setMenuOpen(true)}
-        onMouseLeave={() => setMenuOpen(false)}
-      >
-        <button className="text-gray-700 hover:text-black transition-all duration-300">
-          <FaGlobe className="text-2xl" />
-        </button>
+      <LanguageSwitcher />
 
-        {/* Menu de Idiomas */}
-        {menuOpen && (
-          <div className="absolute top-8 right-0 bg-white shadow-md rounded-lg flex flex-col overflow-hidden">
-            <button
-              className="px-4 py-2 text-sm hover:bg-gray-100 text-gray-800"
-              onClick={() => changeLanguage('en')}
-            >
-              EN
-            </button>
-            <button
-              className="px-4 py-2 text-sm hover:bg-gray-100 text-gray-800"
-              onClick={() => changeLanguage('pt')}
-            >
-              PT
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* Conteúdo Principal */}
       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-[#fafafa]" />
-
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
       </div>
