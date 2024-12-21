@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Edges } from '@react-three/drei';
-import { FaGithub, FaTwitter, FaEnvelope, FaLinkedin } from 'react-icons/fa';
-import { Button } from '@/components/ui/button';
+import { FaGithub, FaTwitter, FaEnvelope, FaLinkedin, FaGlobe } from 'react-icons/fa';
 import { useEffect, useState, useCallback } from 'react';
 import ScrollIndicator from './ScrollIndicator';
 import { useTranslation } from 'react-i18next';
@@ -25,6 +24,7 @@ export default function HeroSection() {
   const { t, i18n } = useTranslation(); 
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); 
   const fullText = t('hero.role'); 
 
   const animateText = useCallback(() => {
@@ -58,22 +58,39 @@ export default function HeroSection() {
     };
   }, [animateText]);
 
-  // Alternar Idiomas
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'pt' : 'en';
-    i18n.changeLanguage(newLang);
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    setMenuOpen(false); 
   };
 
   return (
     <section className="relative h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden mb-12">
-      {/* Botão de Troca de Idioma */}
-      <div className="absolute top-4 right-4 z-50">
-        <button
-          onClick={toggleLanguage}
-          className="px-4 py-2 text-sm font-medium text-white bg-gray-800 hover:bg-gray-600 rounded-lg shadow-md transition-all duration-300"
-        >
-          {i18n.language === 'en' ? 'PT' : 'EN'}
+      <div
+        className="absolute top-4 right-4 z-50"
+        onMouseEnter={() => setMenuOpen(true)}
+        onMouseLeave={() => setMenuOpen(false)}
+      >
+        <button className="text-gray-700 hover:text-black transition-all duration-300">
+          <FaGlobe className="text-2xl" />
         </button>
+
+        {/* Menu de Idiomas */}
+        {menuOpen && (
+          <div className="absolute top-8 right-0 bg-white shadow-md rounded-lg flex flex-col overflow-hidden">
+            <button
+              className="px-4 py-2 text-sm hover:bg-gray-100 text-gray-800"
+              onClick={() => changeLanguage('en')}
+            >
+              EN
+            </button>
+            <button
+              className="px-4 py-2 text-sm hover:bg-gray-100 text-gray-800"
+              onClick={() => changeLanguage('pt')}
+            >
+              PT
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Conteúdo Principal */}
@@ -119,71 +136,6 @@ export default function HeroSection() {
           >
             {t('hero.description')}
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="w-full px-4"
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
-                asChild
-              >
-                <a href="mailto:yladacz@gmail.com">
-                  <FaEnvelope className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">E-mail</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
-                asChild
-              >
-                <a
-                  href="https://www.linkedin.com/in/yladacs/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">LinkedIn</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
-                asChild
-              >
-                <a
-                  href="https://x.com/devingerr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaTwitter className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">Twitter/X</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
-                asChild
-              >
-                <a
-                  href="https://github.com/lanroo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">GitHub</span>
-                </a>
-              </Button>
-            </div>
-          </motion.div>
         </motion.div>
         <ScrollIndicator />
       </div>
