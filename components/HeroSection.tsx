@@ -7,6 +7,7 @@ import { FaGithub, FaTwitter, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState, useCallback } from 'react';
 import ScrollIndicator from './ScrollIndicator';
+import { useTranslation } from 'react-i18next';
 
 function Pyramid() {
   return (
@@ -21,9 +22,10 @@ function Pyramid() {
 }
 
 export default function HeroSection() {
+  const { t, i18n } = useTranslation(); 
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const fullText = 'Web Developer';
+  const fullText = t('hero.role'); 
 
   const animateText = useCallback(() => {
     const typeSpeed = isDeleting ? 50 : 100;
@@ -56,8 +58,25 @@ export default function HeroSection() {
     };
   }, [animateText]);
 
+  // Alternar Idiomas
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'pt' : 'en';
+    i18n.changeLanguage(newLang);
+  };
+
   return (
     <section className="relative h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden mb-12">
+      {/* Botão de Troca de Idioma */}
+      <div className="absolute top-4 right-4 z-50">
+        <button
+          onClick={toggleLanguage}
+          className="px-4 py-2 text-sm font-medium text-white bg-gray-800 hover:bg-gray-600 rounded-lg shadow-md transition-all duration-300"
+        >
+          {i18n.language === 'en' ? 'PT' : 'EN'}
+        </button>
+      </div>
+
+      {/* Conteúdo Principal */}
       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-[#fafafa]" />
 
       <div className="absolute inset-0 w-full h-full">
@@ -98,7 +117,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto px-4"
           >
-            Formada em Engenharia de Software e cursando pós-graduação na PUC, acredito no poder da tecnologia para transformar ideias simples em ferramentas incríveis
+            {t('hero.description')}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

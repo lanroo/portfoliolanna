@@ -4,6 +4,8 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
 import Script from 'next/script';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/src/i18n'; 
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,9 +23,10 @@ export default function RootLayout({
         <meta name="description" content="Meu portfólio como desenvolvedora Web." />
       </head>
       <body className={`${inter.className} relative`}>
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-BDPGCGDZV6"
-          strategy="afterInteractive" 
+          strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -33,7 +36,12 @@ export default function RootLayout({
             gtag('config', 'G-BDPGCGDZV6');
           `}
         </Script>
-        {children}
+
+        {/* Provedor de Tradução */}
+        <I18nextProvider i18n={i18n}>
+          {children}
+        </I18nextProvider>
+
         <Toaster />
       </body>
     </html>
