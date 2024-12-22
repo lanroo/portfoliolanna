@@ -2,6 +2,43 @@
     "hero": {
       "role": "Web Developer",
       "description": "Graduated in Software Engineering and currently pursuing a postgraduate degree at PUC, I believe in the power of technology to transform simple ideas into incredible tools."
+    },
+    "about": {
+      "title": "Ylanna Almeida",
+      "role": "Software Engineer | Web Developer",
+      "summary": "With 3 years of development experience, I use my creativity and technical expertise to create innovative solutions that simplify and solve everyday challenges.",
+      "currentProjectsTitle": "Currently",
+      "currentProjects": [
+        {
+          "icon": "🎓",
+          "description": "Postgraduate studies in Fullstack Development at PUC"
+        },
+        {
+          "icon": "💻",
+          "description": "Developing a solidarity project for Hemocentro Ceará"
+        },
+        {
+          "icon": "🚀",
+          "description": "Building a Fullstack platform for recruitment"
+        }
+      ],
+      "journey": "My journey in technology began with inspiration from my brothers, who introduced me to the fascinating world of computing. From those early experiences, I discovered the charm of turning ideas into creative and practical solutions. I love the challenge of combining logic and imagination to build something that truly makes an impact and a difference.",
+      "closing": "I am very happy that you stopped by! Feel free to explore my portfolio, and if you'd like to exchange ideas or talk about projects, it will be a pleasure to chat with you.",
+      "interestsTitle": "Interests",
+      "interests": [
+        "Sci-fi movies",
+        "Technology",
+        "Artificial Intelligence",
+        "Games",
+        "Innovation",
+        "Pets",
+        "Reading",
+        "Music"
+      ],
+      "cvButton": "Download CV (English)",
+      "emailButton": "Email",
+      "linkedinButton": "LinkedIn",
+      "githubButton": "GitHub"
     }
   }
   

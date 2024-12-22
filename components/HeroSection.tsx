@@ -1,11 +1,14 @@
-import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Edges } from '@react-three/drei';
-import { FaGithub, FaTwitter, FaEnvelope, FaLinkedin } from 'react-icons/fa';
-import { useEffect, useState, useCallback } from 'react';
-import ScrollIndicator from './ScrollIndicator';
-import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './LanguageSwitcher';
+"use client";
+
+import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Edges } from "@react-three/drei";
+import { FaGithub, FaTwitter, FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { useEffect, useState, useCallback } from "react";
+import ScrollIndicator from "./ScrollIndicator";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { Button } from "@/components/ui/button";
 
 function Pyramid() {
   return (
@@ -20,10 +23,10 @@ function Pyramid() {
 }
 
 export default function HeroSection() {
-  const { t } = useTranslation();
-  const [displayText, setDisplayText] = useState('');
+  const { t } = useTranslation(); 
+  const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const fullText = t('hero.role');
+  const fullText = t("hero.role"); 
 
   const animateText = useCallback(() => {
     const typeSpeed = isDeleting ? 50 : 100;
@@ -33,7 +36,7 @@ export default function HeroSection() {
       return;
     }
 
-    if (isDeleting && displayText === '') {
+    if (isDeleting && displayText === "") {
       setTimeout(() => setIsDeleting(false), 1000);
       return;
     }
@@ -58,8 +61,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden mb-12">
-      <LanguageSwitcher />
 
+      <LanguageSwitcher />
       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-[#fafafa]" />
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
@@ -99,8 +102,73 @@ export default function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto px-4"
           >
-            {t('hero.description')}
+            {t("hero.description")} 
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="w-full px-4"
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+                asChild
+              >
+                <a href="mailto:yladacz@gmail.com">
+                  <FaEnvelope className="mr-2 h-4 w-4" />
+                  <span className="whitespace-nowrap">E-mail</span>
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+                asChild
+              >
+                <a
+                  href="https://www.linkedin.com/in/yladacs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin className="mr-2 h-4 w-4" />
+                  <span className="whitespace-nowrap">LinkedIn</span>
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+                asChild
+              >
+                <a
+                  href="https://x.com/devingerr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaTwitter className="mr-2 h-4 w-4" />
+                  <span className="whitespace-nowrap">Twitter/X</span>
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
+                asChild
+              >
+                <a
+                  href="https://github.com/lanroo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub className="mr-2 h-4 w-4" />
+                  <span className="whitespace-nowrap">GitHub</span>
+                </a>
+              </Button>
+            </div>
+          </motion.div>
         </motion.div>
         <ScrollIndicator />
       </div>

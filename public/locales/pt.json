@@ -2,6 +2,43 @@
     "hero": {
       "role": "Desenvolvedora Web",
       "description": "Formada em Engenharia de Software e cursando pós-graduação na PUC, acredito no poder da tecnologia para transformar ideias simples em ferramentas incríveis."
+    },
+    "about": {
+      "title": "Ylanna Almeida",
+      "role": "Engenheira de Software | Desenvolvedora Web",
+      "summary": "Com 3 anos de experiência em desenvolvimento, utilizo minha criatividade e expertise técnica para criar soluções inovadoras que simplificam e resolvem desafios do dia a dia.",
+      "currentProjectsTitle": "Atualmente",
+      "currentProjects": [
+        {
+          "icon": "🎓",
+          "description": "Pós-graduação em Desenvolvimento Fullstack na PUC"
+        },
+        {
+          "icon": "💻",
+          "description": "Desenvolvendo projeto solidário para o Hemocentro Ceará"
+        },
+        {
+          "icon": "🚀",
+          "description": "Construindo plataforma Fullstack para recrutamento"
+        }
+      ],
+      "journey": "Minha jornada na tecnologia começou através da inspiração dos meus irmãos, que me apresentaram ao fascinante mundo da computação. Foi a partir dessas primeiras experiências que descobri o encanto de transformar ideias em soluções criativas e práticas. Adoro o desafio de combinar lógica e imaginação para construir algo que realmente tenha impacto e faça a diferença.",
+      "closing": "Estou muito feliz que você tenha passado por aqui! Sinta-se à vontade para explorar meu portfólio e, se quiser trocar ideias ou falar sobre projetos, será um prazer conversar com você.",
+      "interestsTitle": "Interesses",
+      "interests": [
+        "Filmes Sci-fi",
+        "Tecnologia",
+        "Inteligência Artificial",
+        "Games",
+        "Inovação",
+        "Pets",
+        "Leitura",
+        "Música"
+      ],
+      "cvButton": "Baixar CV (Português)",
+      "emailButton": "E-mail",
+      "linkedinButton": "LinkedIn",
+      "githubButton": "GitHub"
     }
   }
   
