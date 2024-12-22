@@ -60,14 +60,14 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-[90vh] flex flex-col items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden mb-12">
-
       <LanguageSwitcher />
+
       <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-[#fafafa]" />
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
       </div>
-
-      <div className="container px-4 mx-auto flex flex-col items-center justify-center relative z-10">
+      <div className="container px-4 mx-auto flex flex-col items-center justify-center relative z-10 translate-y-[-2rem]">
+        {/* Pirâmide */}
         <div className="w-[200px] h-[200px] mb-8">
           <Canvas>
             <ambientLight intensity={0.5} />
@@ -76,6 +76,7 @@ export default function HeroSection() {
             <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={4} />
           </Canvas>
         </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -103,6 +104,7 @@ export default function HeroSection() {
           >
             {t("hero.description")} 
           </motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -123,6 +125,8 @@ export default function HeroSection() {
             </a>
           </motion.div>
         </motion.div>
+      </div>
+      <div className="fixed bottom-8 left-0 right-0 z-20 pointer-events-none">
         <ScrollIndicator />
       </div>
     </section>
