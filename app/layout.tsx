@@ -7,7 +7,7 @@ import Script from "next/script";
 import { I18nextProvider } from "react-i18next";
 import i18n from "@/src/i18n";
 import { useState, useEffect } from "react";
-import LoadingPage from "@/components/LoadingPage"; // Certifique-se de ter o componente no local correto
+import LoadingPage from "@/components/LoadingPage"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +19,11 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simula o carregamento inicial da aplicação
-    const timer = setTimeout(() => setIsLoading(false), 2000); // Tempo de 2 segundos
-    return () => clearTimeout(timer); // Limpa o timer ao desmontar o componente
+    const timer = setTimeout(() => setIsLoading(false), 2000); 
+    return () => clearTimeout(timer); 
   }, []);
 
   if (isLoading) {
-    // Renderiza a página de carregamento
     return (
       <html lang="en">
         <head>
@@ -65,7 +63,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Provedor de Tradução */}
+        {/* Tradução */}
         <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
 
         <Toaster />

@@ -8,7 +8,6 @@ import { useEffect, useState, useCallback } from "react";
 import ScrollIndicator from "./ScrollIndicator";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { Button } from "@/components/ui/button";
 
 function Pyramid() {
   return (
@@ -108,66 +107,20 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="w-full px-4"
+            className="flex justify-center gap-4 mt-4"
           >
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
-                asChild
-              >
-                <a href="mailto:yladacz@gmail.com">
-                  <FaEnvelope className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">E-mail</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
-                asChild
-              >
-                <a
-                  href="https://www.linkedin.com/in/yladacs/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">LinkedIn</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
-                asChild
-              >
-                <a
-                  href="https://x.com/devingerr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaTwitter className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">Twitter/X</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full bg-black text-white border-black hover:bg-white hover:text-black hover:border-black transition-all duration-300"
-                asChild
-              >
-                <a
-                  href="https://github.com/lanroo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub className="mr-2 h-4 w-4" />
-                  <span className="whitespace-nowrap">GitHub</span>
-                </a>
-              </Button>
-            </div>
+            <a href="mailto:yladacz@gmail.com" target="_blank" rel="noopener noreferrer">
+              <FaEnvelope className="text-black h-6 w-6 transition-transform transform hover:scale-110" />
+            </a>
+            <a href="https://www.linkedin.com/in/yladacs/" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="text-black h-6 w-6 transition-transform transform hover:scale-110" />
+            </a>
+            <a href="https://x.com/devingerr" target="_blank" rel="noopener noreferrer">
+              <FaTwitter className="text-black h-6 w-6 transition-transform transform hover:scale-110" />
+            </a>
+            <a href="https://github.com/lanroo" target="_blank" rel="noopener noreferrer">
+              <FaGithub className="text-black h-6 w-6 transition-transform transform hover:scale-110" />
+            </a>
           </motion.div>
         </motion.div>
         <ScrollIndicator />
