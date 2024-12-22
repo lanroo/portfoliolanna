@@ -24,7 +24,7 @@ export default function Home() {
     {
       title: 'Hivex Bank',
       description:
-        'Landing page moderna para um banco digital usando React, Tailwind e Vite, integrando design responsivo.',
+        'Landing page moderna para um banco digital com design responsivo.',
       image:
         'https://res.cloudinary.com/dggewyuon/image/upload/v1732898928/hivex_lwworg.jpg',
       tags: ['React Native', 'React', 'TypeScript', 'Tailwind'],
@@ -34,7 +34,7 @@ export default function Home() {
     {
       title: 'Site de Engenharia e Segurança do Trabalho',
       description:
-        'Website institucional da Atest, destacando serviços de engenharia de segurança do trabalho, histórico, depoimentos, parceiros e contato, com design moderno e integração ao WhatsApp.',
+        'Website institucional da Atest com design moderno e integração ao WhatsApp.',
       image:
         'https://res.cloudinary.com/dggewyuon/image/upload/v1734531416/25_iwfkxr.png',
       tags: ['TypeScript', 'React', 'Tailwind'],
@@ -44,7 +44,7 @@ export default function Home() {
     {
       title: 'Blog Devinger',
       description:
-        'Blog de programação moderno e interativo, compartilhando dicas, códigos e projetos, com design responsivo e navegação intuitiva',
+        'Blog de programação moderno e interativo, compartilhando dicas, códigos e projetos.',
       image:
         'https://res.cloudinary.com/dggewyuon/image/upload/v1734532523/devinger_okuzte.png',
       tags: ['React', 'Tailwind ', 'Framer Motion', 'ESLint', 'Vite'],
@@ -52,9 +52,19 @@ export default function Home() {
       liveUrl: 'https://blogdevingerr.vercel.app/',
     },
     {
+      title: 'Página de Login e Cadastro Moderna',
+      description:
+        'Um sistema de autenticação moderno, responsivo, com animações suaves.',
+      image:
+        'https://res.cloudinary.com/dggewyuon/image/upload/v1734902628/Captura_de_tela_2024-12-22_181123_dkhvpy.png',
+      tags: ['React', 'Vite', 'Tailwind', 'Typescript', 'Supabase'],
+      githubUrl: 'https://github.com/lanroo/creativelogin',
+      liveUrl: 'https://creativelogin.vercel.app/',
+    },
+    {
       title: 'FlashFood Cardápio',
       description:
-        'Este é um site de cardápios digitais interativos em desenvolvimento, com foco na visualização de menus de restaurantes de forma prática.',
+        'Este é um site de cardápios digitais interativos em desenvolvimento.',
       image:
         'https://res.cloudinary.com/dggewyuon/image/upload/v1734541784/flash_lzcmzq.png',
       tags: ['React', 'Vite', 'Tailwind', 'Axios'],
