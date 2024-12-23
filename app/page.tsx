@@ -62,6 +62,16 @@ export default function Home() {
       liveUrl: 'https://creativelogin.vercel.app/',
     },
     {
+      title: 'Astralis - Exploração Espacial',
+      description:
+        'Este é um site Interativo e envolvente para amantes de Astronomia.',
+      image:
+        'https://res.cloudinary.com/dggewyuon/image/upload/v1734921495/Captura_de_tela_2024-12-22_233311_cc5qeb.png',
+      tags: ['React', 'Vite', 'Tailwind', 'Frame Motion'],
+      githubUrl: 'https://github.com/lanroo/AstraliSpacial',
+      liveUrl: 'https://astrali-spacial.vercel.app/',
+    },
+    {
       title: 'FlashFood Cardápio',
       description:
         'Este é um site de cardápios digitais interativos em desenvolvimento.',
