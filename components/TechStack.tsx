@@ -3,15 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   SiReact, SiVuedotjs, SiTypescript, SiJavascript, SiTailwindcss,
-  SiRedux, SiBootstrap, SiSass, SiStorybook, SiPython, SiFlask,
-  SiPhp, SiExpress, SiNextdotjs, SiPostgresql, SiSqlite, SiPrisma,
-  SiDocker, SiKubernetes, SiNginx, SiJsonwebtokens, SiAuth0,
-  SiSelenium, SiPostman, SiAmazon,
-  SiJest,
+  SiBootstrap, SiSass, SiStorybook, SiPython, SiFlask,
+  SiExpress, SiNextdotjs, SiPostgresql, SiSqlite, SiPrisma,
+  SiDocker, SiJsonwebtokens, SiAuth0,
+  SiSelenium, SiPostman, 
   SiCypress,
   SiMongodb,
-  SiGraphql,
-  SiFirebase,
   SiThreedotjs,
   SiVite
 } from 'react-icons/si';
@@ -29,34 +26,27 @@ const techStack: TechItem[] = [
   { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6', category: 'frontend' },
   { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E', category: 'frontend' },
   { name: 'Tailwind', icon: <SiTailwindcss />, color: '#38B2AC', category: 'frontend' },
-  { name: 'Redux', icon: <SiRedux />, color: '#764ABC', category: 'frontend' },
   { name: 'Bootstrap', icon: <SiBootstrap />, color: '#7952B3', category: 'frontend' },
   { name: 'SASS', icon: <SiSass />, color: '#CC6699', category: 'frontend' },
   { name: 'Storybook', icon: <SiStorybook />, color: '#FF4785', category: 'frontend' },
   { name: 'Python', icon: <SiPython />, color: '#3776AB', category: 'backend' },
   { name: 'Flask', icon: <SiFlask />, color: '#ffffff', category: 'backend' },
-  { name: 'PHP', icon: <SiPhp />, color: '#777BB4', category: 'backend' },
   { name: 'Express', icon: <SiExpress />, color: '#ffffff', category: 'backend' },
   { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff', category: 'frontend' },
   { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791', category: 'database' },
   { name: 'SQLite', icon: <SiSqlite />, color: '#003B57', category: 'database' },
   { name: 'Prisma', icon: <SiPrisma />, color: '#dac497', category: 'database' },
   { name: 'Docker', icon: <SiDocker />, color: '#2496ED', category: 'devops' },
-  { name: 'Kubernetes', icon: <SiKubernetes />, color: '#326CE5', category: 'devops' },
-  { name: 'AWS', icon: <SiAmazon />, color: '#FF9900', category: 'devops' },
-  { name: 'Nginx', icon: <SiNginx />, color: '#009639', category: 'devops' },
   { name: 'JWT', icon: <SiJsonwebtokens />, color: '#ffffff', category: 'backend' },
   { name: 'OAuth', icon: <SiAuth0 />, color: '#EB5424', category: 'backend' },
   { name: 'Postman', icon: <SiPostman />, color: '#FF6C37', category: 'testing' },
   { name: 'Selenium', icon: <SiSelenium />, color: '#43B02A', category: 'testing' },
-  { name: 'Jest', icon: <SiJest />, color: '#C21325', category: 'testing' },
   { name: 'Cypress', icon: <SiCypress />, color: '#5ad19f', category: 'testing' },
   { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248', category: 'database' },
-  { name: 'GraphQL', icon: <SiGraphql />, color: '#E10098', category: 'backend' },
-  { name: 'Firebase', icon: <SiFirebase />, color: '#FFCA28', category: 'backend' }, 
   { name: 'Vite', icon: <SiVite />, color: '#646CFF', category: 'frontend' },
   { name: 'Three.js', icon: <SiThreedotjs />, color: '#FFFFFF', category: 'frontend' },
 ];
+
 
 export default function TechStack() {
   const [currentPage, setCurrentPage] = useState(0);
