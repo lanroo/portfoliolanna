@@ -16,8 +16,8 @@ export default function Home() {
       description:
         'Uma plataforma de carreiras responsiva construída com React, Tailwind CSS e Vite.',
       image:
-        'https://res.cloudinary.com/dggewyuon/image/upload/v1734522046/8_083740_brij6d.png',
-      tags: ['React', 'Tailwind', 'Vite'],
+        'https://res.cloudinary.com/dggewyuon/image/upload/v1735451806/Captura_de_tela_2024-12-29_025650_umy2ui.png',
+      tags: ['React', 'Tailwind', 'Next', 'Vite'],
       githubUrl: 'https://github.com/lanroo/madilcarreiras',
       liveUrl: 'https://madilcarreiras.vercel.app/',
     },
