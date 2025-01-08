@@ -3,12 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   SiReact, SiVuedotjs, SiTypescript, SiJavascript, SiTailwindcss,
-  SiBootstrap, SiSass, SiStorybook, SiPython, SiFlask,
-  SiExpress, SiNextdotjs, SiPostgresql, SiSqlite, SiPrisma,
-  SiDocker, SiJsonwebtokens, SiAuth0,
-  SiSelenium, SiPostman, 
-  SiCypress,
-  SiMongodb,
+  SiBootstrap, SiPython, SiFlask, SiNextdotjs,
+  SiDocker,
+  SiSelenium, 
   SiThreedotjs,
   SiVite
 } from 'react-icons/si';
@@ -27,22 +24,11 @@ const techStack: TechItem[] = [
   { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E', category: 'frontend' },
   { name: 'Tailwind', icon: <SiTailwindcss />, color: '#38B2AC', category: 'frontend' },
   { name: 'Bootstrap', icon: <SiBootstrap />, color: '#7952B3', category: 'frontend' },
-  { name: 'SASS', icon: <SiSass />, color: '#CC6699', category: 'frontend' },
-  { name: 'Storybook', icon: <SiStorybook />, color: '#FF4785', category: 'frontend' },
   { name: 'Python', icon: <SiPython />, color: '#3776AB', category: 'backend' },
   { name: 'Flask', icon: <SiFlask />, color: '#ffffff', category: 'backend' },
-  { name: 'Express', icon: <SiExpress />, color: '#ffffff', category: 'backend' },
   { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff', category: 'frontend' },
-  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791', category: 'database' },
-  { name: 'SQLite', icon: <SiSqlite />, color: '#003B57', category: 'database' },
-  { name: 'Prisma', icon: <SiPrisma />, color: '#dac497', category: 'database' },
   { name: 'Docker', icon: <SiDocker />, color: '#2496ED', category: 'devops' },
-  { name: 'JWT', icon: <SiJsonwebtokens />, color: '#ffffff', category: 'backend' },
-  { name: 'OAuth', icon: <SiAuth0 />, color: '#EB5424', category: 'backend' },
-  { name: 'Postman', icon: <SiPostman />, color: '#FF6C37', category: 'testing' },
   { name: 'Selenium', icon: <SiSelenium />, color: '#43B02A', category: 'testing' },
-  { name: 'Cypress', icon: <SiCypress />, color: '#5ad19f', category: 'testing' },
-  { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248', category: 'database' },
   { name: 'Vite', icon: <SiVite />, color: '#646CFF', category: 'frontend' },
   { name: 'Three.js', icon: <SiThreedotjs />, color: '#FFFFFF', category: 'frontend' },
 ];
