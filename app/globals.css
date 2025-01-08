@@ -38,16 +38,6 @@ body {
   opacity: 1;
 }
 
-/* Margintop img aboutme */
-.lg\:col-span-4.flex.flex-col.items-center.lg\:items-start.space-y-6 {
-  margin-top: 2rem;
-}
-
-/* Margintop text aboutme */
-h2.text-3xl.font-bold.mb-6.text-center.relative.-top-11 {
-  margin-top: 2rem;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
