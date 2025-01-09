@@ -140,14 +140,14 @@ export default function App() {
                 <div className="flex justify-center gap-3 pt-2">
                   <button
                     onClick={toggleModal}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 rounded-full hover:bg-blue-700 transition-all duration-300 text-sm"
                   >
                     <FileText className="w-4 h-4" />
                     <span>CV</span>
                   </button>
                   <a 
                     href="mailto:yladacz@gmail.com"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors text-sm"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300 text-sm"
                   >
                     <Mail className="w-4 h-4" />
                     <span>Contato</span>
@@ -159,7 +159,7 @@ export default function App() {
                     href="https://github.com/lanroo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors"
+                    className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300"
                   >
                     <Github className="w-5 h-5" />
                   </a>
@@ -167,7 +167,7 @@ export default function App() {
                     href="https://www.linkedin.com/in/yladacs/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors"
+                    className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
@@ -175,7 +175,7 @@ export default function App() {
                     href="https://x.com/devingerr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors"
+                    className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300"
                   >
                     <X className="w-5 h-5 text-white" />
                   </a>
@@ -184,50 +184,80 @@ export default function App() {
             </div>
 
             {/* Technologies */}
-            <motion.div 
-              className="relative max-w-full overflow-hidden bg-gray-800/30 rounded-2xl p-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <h2 className="text-xl font-semibold mb-4">Tecnologias</h2>
-              <div className="relative">
-                <div className="absolute left-0 w-8 h-full bg-gradient-to-r from-gray-800/30 to-transparent z-10" />
-                <div className="absolute right-0 w-8 h-full bg-gradient-to-l from-gray-800/30 to-transparent z-10" />
-                
-                <div className="flex gap-4 items-center py-2 overflow-hidden">
-                  <motion.div
-                    animate={{ 
-                      x: [0, -100 * techStack.length], 
-                    }}
-                    transition={{
-                      duration: 30,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                    className="flex gap-4 items-center whitespace-nowrap"
-                  >
-                    {[...techStack, ...techStack].map((tech, index) => (
-                      <div
-                        key={index}
-                        className="group flex items-center gap-2 bg-gray-800/50 px-4 py-2 rounded-full backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
+          <motion.div 
+            className="relative max-w-full overflow-hidden bg-gray-800/30 rounded-2xl p-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <h2 className="text-xl font-semibold mb-4">Tecnologias</h2>
+            <div className="relative">
+              <div className="absolute left-0 w-8 h-full bg-gradient-to-r from-gray-800/30 to-transparent z-10" />
+              <div className="absolute right-0 w-8 h-full bg-gradient-to-l from-gray-800/30 to-transparent z-10" />
+              
+              <div 
+                className="flex gap-4 items-center py-2 overflow-x-auto touch-pan-x scrollbar-none"
+                style={{ WebkitOverflowScrolling: 'touch' }}
+              >
+                <motion.div
+                  drag="x"
+                  dragConstraints={{ left: -100 * techStack.length, right: 0 }}
+                  dragElastic={0.2}
+                  dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+                  animate={{ 
+                    x: [0, -100 * techStack.length], 
+                  }}
+                  transition={{
+                    duration: 30,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="tech-scroll flex gap-4 items-center whitespace-nowrap cursor-grab active:cursor-grabbing"
+                  onHoverStart={() => {
+                    const element = document.querySelector('.tech-scroll') as HTMLElement;
+                    if (element) {
+                      element.style.animationPlayState = 'paused';
+                    }
+                  }}
+                  onHoverEnd={() => {
+                    const element = document.querySelector('.tech-scroll') as HTMLElement;
+                    if (element) {
+                      element.style.animationPlayState = 'running';
+                    }
+                  }}
+                  onDragStart={() => {
+                    const element = document.querySelector('.tech-scroll') as HTMLElement;
+                    if (element) {
+                      element.style.animationPlayState = 'paused';
+                    }
+                  }}
+                  onDragEnd={() => {
+                    const element = document.querySelector('.tech-scroll') as HTMLElement;
+                    if (element) {
+                      element.style.animationPlayState = 'running';
+                    }
+                  }}
+                >
+                  {[...techStack, ...techStack].map((tech, index) => (
+                    <div
+                      key={index}
+                      className="group flex items-center gap-2 bg-gray-800/50 px-4 py-2 rounded-full backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
+                    >
+                      <div 
+                        className="text-lg text-gray-400 group-hover:text-[var(--hover-color)] transition-colors duration-300"
+                        style={{ '--hover-color': tech.color } as React.CSSProperties}
                       >
-                        <div 
-                          className="text-lg text-gray-400 group-hover:text-[var(--hover-color)] transition-colors duration-300"
-                          style={{ '--hover-color': tech.color } as React.CSSProperties}
-                        >
-                          {tech.icon}
-                        </div>
-                        <span className="text-gray-400 text-sm">
-                          {tech.name}
-                        </span>
+                        {tech.icon}
                       </div>
-                    ))}
-                  </motion.div>
-                </div>
+                      <span className="text-gray-400 text-sm">
+                        {tech.name}
+                      </span>
+                    </div>
+                  ))}
+                </motion.div>
               </div>
-            </motion.div>
-
+            </div>
+          </motion.div>
             {/* Interests */}
             <motion.div 
               className="bg-gray-800/30 rounded-2xl p-6"
@@ -281,91 +311,51 @@ export default function App() {
             {/* Current and Projects Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Current */}
-              <div className="bg-gray-800/30 rounded-2xl p-8">
-                <h2 className="text-2xl font-bold mb-6">Atualmente</h2>
-                <div className="space-y-4">
+              <div className="bg-gray-800/30 rounded-2xl p-6">
+                <h2 className="text-2xl font-bold mb-4">Atualmente</h2>
+                <div className="space-y-3">
                   <motion.div
-                    className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600/10 to-indigo-600/10 hover:from-blue-600/20 hover:to-indigo-600/20 transition-all duration-300"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="group relative overflow-hidden rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative p-6 z-10">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <h3 className="text-xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">
-                          Pós-graduação em Desenvolvimento Fullstack
-                        </h3>
-                        <div className="space-y-2">
-                          <p className="text-gray-300 group-hover:text-white transition-colors">PUC</p>
-                          <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
-                            <p className="text-gray-400 text-sm mt-2">
-                              Aprofundando conhecimentos em desenvolvimento web moderno, arquitetura de software e práticas ágeis.
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
+                    <div className="p-4">
+                      <h3 className="text-base font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">
+                        Pós-graduação em Desenvolvimento Fullstack
+                      </h3>
+                      <p className="text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors">
+                        PUC
+                      </p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600/10 to-indigo-600/10 hover:from-blue-600/20 hover:to-indigo-600/20 transition-all duration-300"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="group relative overflow-hidden rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative p-6 z-10">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                      >
-                        <h3 className="text-xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">
-                          Hemocentro Ceará
-                        </h3>
-                        <div className="space-y-2">
-                          <p className="text-gray-300 group-hover:text-white transition-colors">
-                            Desenvolvimento de projeto solidário para otimização de processos.
-                          </p>
-                          <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
-                            <p className="text-gray-400 text-sm mt-2">
-                              Contribuindo para melhorar a eficiência dos processos de doação de sangue e gestão de doadores.
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
+                    <div className="p-4">
+                      <h3 className="text-base font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">
+                        Hemocentro Ceará
+                      </h3>
+                      <p className="text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors">
+                        Desenvolvimento de projeto solidário para otimização de processos
+                      </p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600/10 to-indigo-600/10 hover:from-blue-600/20 hover:to-indigo-600/20 transition-all duration-300"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="group relative overflow-hidden rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative p-6 z-10">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                      >
-                        <h3 className="text-xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">
-                          Plataforma de Recrutamento
-                        </h3>
-                        <div className="space-y-2">
-                          <p className="text-gray-300 group-hover:text-white transition-colors">
-                            Construção de solução fullstack para processos de recrutamento.
-                          </p>
-                          <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
-                            <p className="text-gray-400 text-sm mt-2">
-                              Desenvolvendo uma plataforma moderna para otimizar processos de recrutamento e seleção.
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
+                    <div className="p-4">
+                      <h3 className="text-base font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">
+                        Plataforma de Recrutamento
+                      </h3>
+                      <p className="text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors">
+                        Construção de solução fullstack para processos de recrutamento
+                      </p>
                     </div>
                   </motion.div>
                 </div>
@@ -430,10 +420,10 @@ export default function App() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-          <div className="bg-gray-800 rounded-lg shadow-lg w-96 p-6 relative">
+          <div className="bg-gray-800 rounded-2xl shadow-lg w-96 p-6 relative">
             <button
               onClick={toggleModal}
-              className="absolute top-3 right-3 text-gray-400 hover:text-gray-200"
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-200 rounded-full p-1 hover:bg-gray-700/50 transition-all duration-300"
             >
               <X className="w-5 h-5" />
             </button>
@@ -443,7 +433,7 @@ export default function App() {
                 href={resumePortuguese}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 text-center transition-all duration-200"
+                className="px-4 py-2 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 text-center transition-all duration-300"
               >
                 Baixar CV (Português)
               </a>
@@ -451,7 +441,7 @@ export default function App() {
                 href={resumeEnglish}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 text-center transition-all duration-200"
+                className="px-4 py-2 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 text-center transition-all duration-300"
               >
                 Download CV (English)
               </a>
@@ -459,6 +449,6 @@ export default function App() {
           </div>
         </div>
       )}
-      </div>
-    );
-  }
+    </div>
+  );
+}
