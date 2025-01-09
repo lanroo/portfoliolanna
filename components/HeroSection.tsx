@@ -68,32 +68,26 @@ const allProjects = [
   },
   {
     title: 'Automação Whatsapp',
-    description:
-      'Automação para o whatsapp utilizando Python, Flask, Selenium WebDriver e Docker.',
-    image:
-      'https://blog.meugrupo.vip/wp-content/uploads/2022/11/WhatsApp-Automation-for-WordPress-1024x536.png',
+    description: 'Automação para o whatsapp utilizando Python, Flask, Selenium WebDriver e Docker.',
+    image: 'https://blog.meugrupo.vip/wp-content/uploads/2022/11/WhatsApp-Automation-for-WordPress-1024x536.png',
     tags: ['Python', 'Flask', 'Docker', 'Selenium'],
   },
   {
     title: 'Downloader',
-    description:
-      'Downloader Web e Extensão Google de vídeos YouTube criado com Python.',
-    image:
-      'https://res.cloudinary.com/dggewyuon/image/upload/v1732902116/downloader_yenh1y.png',
+    description: 'Downloader Web e Extensão Google de vídeos YouTube criado com Python.',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1732902116/downloader_yenh1y.png',
     tags: ['Python', 'Flask', 'Socket.IO', 'Bootstrap 4'],
   },
   {
     title: 'Paint Web - Drawart',
-    description:
-      'Espaço para desenho/pintura estilo Paint. Usando tecnologia canvas JS.',
+    description: 'Espaço para desenho/pintura estilo Paint. Usando tecnologia canvas JS.',
     image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1732903352/paint_doyjqh.png',
     tags: ['Javascript', 'HTML', 'CSS', 'Canvas API'],
     liveUrl: 'https://drawart.vercel.app/',
   },
   {
     title: 'Disaster Alerts',
-    description:
-      'Sistema de alerta de desastres climáticos que monitora riscos em tempo real e envia notificações personalizadas por SMS e e-mail, utilizando dados do OpenWeatherMap, NOAA e NASA.',
+    description: 'Sistema de alerta de desastres climáticos que monitora riscos em tempo real e envia notificações personalizadas por SMS e e-mail, utilizando dados do OpenWeatherMap, NOAA e NASA.',
     image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1732904702/alert_bjwygt.png',
     tags: ['React', 'Express', 'ESlint'],
   },
@@ -185,7 +179,6 @@ export default function App() {
                   >
                     <X className="w-5 h-5 text-white" />
                   </a>
-
                 </div>
               </div>
             </div>
@@ -276,12 +269,12 @@ export default function App() {
             <div className="bg-gray-800/30 rounded-2xl p-8">
               <h2 className="text-2xl font-bold mb-4">Sobre</h2>
               <div className="space-y-4 text-gray-300">
-              <p>
-              Sou Engenheira de Software e atualmente estou cursando pós-graduação em Desenvolvimento FullStack na PUC. Tenho paixão por criar interfaces modernas e intuitivas.
-            </p>
-            <p>
-              Meu foco é aplicar criatividade na construção de tecnologias responsivas que proporcionem experiências excepcionais aos usuários.
-            </p>
+                <p>
+                  Sou Engenheira de Software e atualmente estou cursando pós-graduação em Desenvolvimento FullStack na PUC. Tenho paixão por criar interfaces modernas e intuitivas.
+                </p>
+                <p>
+                  Meu foco é aplicar criatividade na construção de tecnologias responsivas que proporcionem experiências excepcionais aos usuários.
+                </p>
               </div>
             </div>
 
@@ -291,28 +284,90 @@ export default function App() {
               <div className="bg-gray-800/30 rounded-2xl p-8">
                 <h2 className="text-2xl font-bold mb-6">Atualmente</h2>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-blue-400">Pós-graduação em Desenvolvimento Fullstack</h3>
-                      <p className="text-gray-300 mt-1">PUC</p>
+                  <motion.div
+                    className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600/10 to-indigo-600/10 hover:from-blue-600/20 hover:to-indigo-600/20 transition-all duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative p-6 z-10">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <h3 className="text-xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">
+                          Pós-graduação em Desenvolvimento Fullstack
+                        </h3>
+                        <div className="space-y-2">
+                          <p className="text-gray-300 group-hover:text-white transition-colors">PUC</p>
+                          <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+                            <p className="text-gray-400 text-sm mt-2">
+                              Aprofundando conhecimentos em desenvolvimento web moderno, arquitetura de software e práticas ágeis.
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
                     </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-blue-400">Hemocentro Ceará</h3>
-                      <p className="text-gray-300 mt-1">
-                        Desenvolvimento de projeto solidário para otimização de processos.
-                      </p>
+                  </motion.div>
+
+                  <motion.div
+                    className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600/10 to-indigo-600/10 hover:from-blue-600/20 hover:to-indigo-600/20 transition-all duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative p-6 z-10">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                      >
+                        <h3 className="text-xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">
+                          Hemocentro Ceará
+                        </h3>
+                        <div className="space-y-2">
+                          <p className="text-gray-300 group-hover:text-white transition-colors">
+                            Desenvolvimento de projeto solidário para otimização de processos.
+                          </p>
+                          <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+                            <p className="text-gray-400 text-sm mt-2">
+                              Contribuindo para melhorar a eficiência dos processos de doação de sangue e gestão de doadores.
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
                     </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-blue-400">Plataforma de Recrutamento</h3>
-                      <p className="text-gray-300 mt-1">
-                        Construção de solução fullstack para processos de recrutamento.
-                      </p>
+                  </motion.div>
+
+                  <motion.div
+                    className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600/10 to-indigo-600/10 hover:from-blue-600/20 hover:to-indigo-600/20 transition-all duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative p-6 z-10">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                      >
+                        <h3 className="text-xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">
+                          Plataforma de Recrutamento
+                        </h3>
+                        <div className="space-y-2">
+                          <p className="text-gray-300 group-hover:text-white transition-colors">
+                            Construção de solução fullstack para processos de recrutamento.
+                          </p>
+                          <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-300">
+                            <p className="text-gray-400 text-sm mt-2">
+                              Desenvolvendo uma plataforma moderna para otimizar processos de recrutamento e seleção.
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
 
@@ -335,17 +390,17 @@ export default function App() {
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-110"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent group-hover:opacity-75 transition-opacity" />
+                          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent group-hover:opacity-90 transition-opacity" />
                         </div>
                         <div className="relative h-full flex flex-col justify-center p-4 z-10">
-                          <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                          <h3 className="text-lg font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] group-hover:text-blue-400 transition-colors">
                             {project.title}
                           </h3>
-                          <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-2 mt-2">
                             {project.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className="px-2 py-0.5 bg-blue-600/20 text-blue-400 rounded-full text-xs"
+                                className="px-2 py-0.5 bg-blue-500/20 backdrop-blur-sm text-blue-200 rounded-full text-xs border border-blue-400/20 shadow-sm"
                               >
                                 {tag}
                               </span>
@@ -404,6 +459,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </div>
-  );
-}
+      </div>
+    );
+  }
