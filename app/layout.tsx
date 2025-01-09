@@ -7,7 +7,7 @@ import Script from "next/script";
 import { I18nextProvider } from "react-i18next";
 import i18n from "@/src/i18n";
 import { useState, useEffect } from "react";
-import LoadingPage from "@/components/LoadingPage"; 
+import LoadingPage from "@/components/LoadingPage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +19,8 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); 
-    return () => clearTimeout(timer); 
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {

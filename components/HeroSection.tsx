@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, FileText, X } from 'lucide-react';
 import Script from 'next/script';
+import Image from 'next/image';
 import { SiReact, SiVuedotjs, SiTypescript, SiJavascript, SiTailwindcss, SiBootstrap, SiPython, SiFlask, SiNextdotjs, SiDocker, SiSelenium, SiVite, SiThreedotjs } from 'react-icons/si';
 
 const techStack = [
@@ -20,6 +21,82 @@ const techStack = [
   { name: 'Selenium', icon: <SiSelenium />, color: '#43B02A' },
   { name: 'Vite', icon: <SiVite />, color: '#646CFF' },
   { name: 'Three.js', icon: <SiThreedotjs />, color: '#FFFFFF' },
+];
+
+const allProjects = [
+  {
+    title: 'Site de Recrutamento - Madil Carreiras',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1735451806/Captura_de_tela_2024-12-29_025650_umy2ui.png',
+    tags: ['React', 'Tailwind', 'Next.js'],
+    liveUrl: 'https://madilcarreiras.vercel.app/',
+  },
+  {
+    title: 'Hivex Bank',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1732898928/hivex_lwworg.jpg',
+    tags: ['React', 'TypeScript', 'Tailwind'],
+    liveUrl: 'https://hivexbank.netlify.app/',
+  },
+  {
+    title: 'Atest Engenharia',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1734531416/25_iwfkxr.png',
+    tags: ['TypeScript', 'React', 'Tailwind'],
+    liveUrl: 'https://atest-tawny.vercel.app/',
+  },
+  {
+    title: 'Blog Devinger',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1734532523/devinger_okuzte.png',
+    tags: ['React', 'Tailwind', 'Framer Motion'],
+    liveUrl: 'https://blogdevingerr.vercel.app/',
+  },
+  {
+    title: 'Tela Login',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1734902628/Captura_de_tela_2024-12-22_181123_dkhvpy.png',
+    tags: ['React', 'Typescript', 'Supabase'],
+    liveUrl: 'https://creativelogin.vercel.app/',
+  },
+  {
+    title: 'Astralis - Exploração Espacial',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1734921495/Captura_de_tela_2024-12-22_233311_cc5qeb.png',
+    tags: ['React', 'Framer Motion', 'Tailwind'],
+    liveUrl: 'https://astrali-spacial.vercel.app/',
+  },
+  {
+    title: 'FlashFood Cardápio',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1734541784/flash_lzcmzq.png',
+    tags: ['React', 'Vite', 'Tailwind'],
+    liveUrl: 'https://flashfoodcardapio.vercel.app/',
+  },
+  {
+    title: 'Automação Whatsapp',
+    description:
+      'Automação para o whatsapp utilizando Python, Flask, Selenium WebDriver e Docker.',
+    image:
+      'https://blog.meugrupo.vip/wp-content/uploads/2022/11/WhatsApp-Automation-for-WordPress-1024x536.png',
+    tags: ['Python', 'Flask', 'Docker', 'Selenium'],
+  },
+  {
+    title: 'Downloader',
+    description:
+      'Downloader Web e Extensão Google de vídeos YouTube criado com Python.',
+    image:
+      'https://res.cloudinary.com/dggewyuon/image/upload/v1732902116/downloader_yenh1y.png',
+    tags: ['Python', 'Flask', 'Socket.IO', 'Bootstrap 4'],
+  },
+  {
+    title: 'Paint Web - Drawart',
+    description:
+      'Espaço para desenho/pintura estilo Paint. Usando tecnologia canvas JS.',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1732903352/paint_doyjqh.png',
+    tags: ['Javascript', 'HTML', 'CSS', 'Canvas API'],
+    liveUrl: 'https://drawart.vercel.app/',
+  },
+  {
+    title: 'Disaster Alerts',
+    description:
+      'Sistema de alerta de desastres climáticos que monitora riscos em tempo real e envia notificações personalizadas por SMS e e-mail, utilizando dados do OpenWeatherMap, NOAA e NASA.',
+    image: 'https://res.cloudinary.com/dggewyuon/image/upload/v1732904702/alert_bjwygt.png',
+    tags: ['React', 'Express', 'ESlint'],
+  },
 ];
 
 export default function App() {
@@ -101,11 +178,14 @@ export default function App() {
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="mailto:yladacz@gmail.com"
+                    href="https://x.com/devingerr"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors"
                   >
-                    <Mail className="w-5 h-5" />
+                    <X className="w-5 h-5 text-white" />
                   </a>
+
                 </div>
               </div>
             </div>
@@ -196,44 +276,95 @@ export default function App() {
             <div className="bg-gray-800/30 rounded-2xl p-8">
               <h2 className="text-2xl font-bold mb-4">Sobre</h2>
               <div className="space-y-4 text-gray-300">
-                <p>
-                  Com 3 anos de experiência em desenvolvimento, utilizo minha criatividade e expertise técnica 
-                  para criar soluções inovadoras que simplificam e resolvem desafios do dia a dia.
-                </p>
-                <p>
-                  Minha jornada na tecnologia começou através da inspiração dos meus irmãos, que
-                  me apresentaram ao fascinante mundo da computação. Foi a partir dessas primeiras
-                  experiências que descobri o encanto de transformar ideias em soluções criativas
-                  e práticas.
-                </p>
+              <p>
+              Sou Engenheira de Software e atualmente estou cursando pós-graduação em Desenvolvimento FullStack na PUC. Tenho paixão por criar interfaces modernas e intuitivas.
+            </p>
+            <p>
+              Meu foco é aplicar criatividade na construção de tecnologias responsivas que proporcionem experiências excepcionais aos usuários.
+            </p>
               </div>
             </div>
 
-            {/* Current */}
-            <div className="bg-gray-800/30 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-6">Atualmente</h2>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-blue-400">Pós-graduação em Desenvolvimento Fullstack</h3>
-                    <p className="text-gray-300 mt-1">PUC</p>
+            {/* Current and Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Current */}
+              <div className="bg-gray-800/30 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold mb-6">Atualmente</h2>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-blue-400">Pós-graduação em Desenvolvimento Fullstack</h3>
+                      <p className="text-gray-300 mt-1">PUC</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-blue-400">Hemocentro Ceará</h3>
+                      <p className="text-gray-300 mt-1">
+                        Desenvolvimento de projeto solidário para otimização de processos.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-blue-400">Plataforma de Recrutamento</h3>
+                      <p className="text-gray-300 mt-1">
+                        Construção de solução fullstack para processos de recrutamento.
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-blue-400">Hemocentro Ceará</h3>
-                    <p className="text-gray-300 mt-1">
-                      Desenvolvimento de projeto solidário para otimização de processos.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 p-4 bg-gray-800/50 rounded-lg">
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-blue-400">Plataforma de Recrutamento</h3>
-                    <p className="text-gray-300 mt-1">
-                      Construção de solução fullstack para processos de recrutamento.
-                    </p>
-                  </div>
+              </div>
+
+              {/* Projects */}
+              <div className="bg-gray-800/30 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold mb-6">Projetos em Destaque</h2>
+                <div className="space-y-4 h-[400px] overflow-y-auto pr-4 custom-scrollbar">
+                  {allProjects.map((project, index) => (
+                    <motion.div
+                      key={index}
+                      className="relative group h-[120px] rounded-lg overflow-hidden cursor-pointer"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block h-full">
+                        <div className="absolute inset-0">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent group-hover:opacity-75 transition-opacity" />
+                        </div>
+                        <div className="relative h-full flex flex-col justify-center p-4 z-10">
+                          <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                            {project.title}
+                          </h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 py-0.5 bg-blue-600/20 text-blue-400 rounded-full text-xs"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </a>
+                    </motion.div>
+                  ))}
+                  <motion.a
+                    href="https://github.com/lanroo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors mt-4"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <Github className="w-4 h-4" />
+                    <span className="text-sm font-medium">Ver mais projetos no GitHub</span>
+                  </motion.a>
                 </div>
               </div>
             </div>
